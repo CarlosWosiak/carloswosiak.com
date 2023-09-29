@@ -1,6 +1,6 @@
 export const jobList = [{
     startDate: "2021",
-    endDate: "present",
+    endDate: "Present",
     jobTitle: "Software engineer",
     company: "Itaú Unibanco",
     description: `Played a key role in the successful migration of our
@@ -41,6 +41,7 @@ export const jobList = [{
     startDate: "2015",
     endDate: "2020",
     jobTitle: "Web Developer",
+    company: "Almix Internet",
     description: `Almix is a ISP company, while working there for many years I had
     many responsibilities, such as development of the company
     website and internal systems (mostly using Angular, PHP, SQL and

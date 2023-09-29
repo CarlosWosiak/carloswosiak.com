@@ -4,20 +4,56 @@
     export let jobTitle = "";
     export let company = "";
     export let description = "";
+    export let stack = [""];
 </script>
 
-<div class="row">
+<div class="row container">
     <div
-        class="col-sm-10 col-md-8 col-lg-7 col-sm-offset-1 col-md-offset-2 col-lg-offset-3"
+        class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 job-entry"
     >
         <div class="row">
-            {startDate} - {endDate}
-            <h3>{jobTitle} - {company}</h3>
+            <div class="job-period">{startDate} - {endDate}</div>
+            <h3>{jobTitle}{company ? ` - ${company}` : ""}</h3>
         </div>
         <div class="row">
             <p>
                 {description}
             </p>
         </div>
+        <div class="row">
+            {#each stack as tech}
+                <div class="badge">{tech}</div>
+            {/each}
+        </div>
     </div>
 </div>
+
+<style>
+    .job-period {
+        align-self: center;
+        margin-right: 2rem;
+    }
+
+    .job-entry {
+        margin-bottom: 3rem;
+        transition: 0.3s;
+    }
+
+    .job-entry:hover {
+        background-color: rgba(255, 255, 255, 0.096);
+        border-radius: 1rem;
+    }
+
+    .badge {
+        background: #939ad13d;
+        color: #a1b3f5;
+        padding: 0.4rem 1rem;
+        border-radius: 1rem;
+        margin: 0.5rem 0.5rem;
+        transition: 0.3s;
+    }
+
+    .badge:hover {
+        background: #15171f3d;
+    }
+</style>

@@ -64,6 +64,14 @@
   {#each jobList as job}
     <JobEntry {...job} />
   {/each}
+  <div class="row footer">
+    <div
+      class="col-sm-10 col-md-3 col-lg-2 col-sm-offset-1 col-lg-offset-7 col-md-offset-8"
+    >
+      Built with Svelte, mini.css and ❤️, deployed with Vercel. All text is set
+      in the Inter typeface.
+    </div>
+  </div>
 </div>
 
 <style>
@@ -79,7 +87,7 @@
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
   }
 
@@ -125,5 +133,9 @@
   .profile-description > p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+  }
+
+  .footer {
+    margin-bottom: 4rem;
   }
 </style>
