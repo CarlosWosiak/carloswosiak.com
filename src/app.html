@@ -8,11 +8,12 @@
 		content="Hi! I am Carlos, a Software Engineer at Itaú Unibanco, the largest banking institution in LATAM. I develop scalable and cost-efficient applications using C#, .NET, AWS, Angular, Python, and SQL Server, following the best practices for security and performance." />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:site_name" content="Carlos Wosiak - Software Engineer">
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Carlos Wosiak - Software Engineer" />
 	<meta property="og:description"
 		content="Hi! I am Carlos, a Software Engineer at Itaú Unibanco, the largest banking institution in LATAM. I develop scalable and cost-efficient applications using C#, .NET, AWS, Angular, Python, and SQL Server, following the best practices for security and performance." />
-	<meta property="og:image" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg" />
+	<meta property="og:image:secure_url" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg" />
 
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
@@ -25,10 +26,33 @@
 	<div style="display: contents">%sveltekit.body%</div>
 </body>
 <style>
+	* {
+		font-family: 'Inter';
+	}
+
 	body {
 		background-color: #0F202A;
 		color: #CFCFCF;
-		font-family: 'Inter';
+	}
+
+	body {
+		background: linear-gradient(45deg, #081218, #050f41, #135c77);
+		background-size: 400% 400%;
+		animation: gradient 15s ease infinite;
+	}
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 
 	:root {
