@@ -19,9 +19,9 @@
     <p>
         I have a bachelor's degree in Software Engineering, a certification in <span
             class="custom-stack AWS">AWS</span
-        > and domain expertise in the FIX Protocol and Financial trading exchanges.
-        I am passionate about learning new technologies and sharing knowledge with
-        others.
+        >, domain expertise in the FIX Protocol and Financial trading exchanges.
+        I am passionate about learning new technologies and sharing knowledge
+        with others.
     </p>
     <p>
         I have given training courses and presented at conferences on various
