@@ -7,8 +7,27 @@
         class="col-sm-10 col-md-5 col-lg-4 col-sm-offset-1 col-lg-offset-3 col-md-offset-2"
     >
         <div class="credit">
-            Built with Svelte, mini.css and ❤️, deployed with Vercel. All text
-            is set in the Inter typeface.
+            Designed in <a
+                href="https://www.figma.com/"
+                target="_blank"
+                rel="noopener noreferrer">Figma</a
+            >, Built with
+            <a
+                href="https://svelte.dev/"
+                target="_blank"
+                rel="noopener noreferrer">Svelte</a
+            >,
+            <a
+                href="https://minicss.us/"
+                target="_blank"
+                rel="noopener noreferrer">mini.css</a
+            >
+            and ❤️, deployed with
+            <a
+                href="https://vercel.com/"
+                target="_blank"
+                rel="noopener noreferrer">Vercel</a
+            >. All text is set in the Inter typeface.
         </div>
     </div>
 
@@ -23,5 +42,10 @@
     }
     .credit {
         max-width: 20rem;
+    }
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        color: white;
     }
 </style>
