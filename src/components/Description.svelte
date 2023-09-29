@@ -1,9 +1,29 @@
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(".no-show");
+        hiddenElements.forEach((hiddenElement) =>
+            observer.observe(hiddenElement)
+        );
+    });
+</script>
+
 <div
-    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description"
+    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description no-show"
 >
     <p>
         Hi! I am Carlos, a Software Engineer at <a
-            class="itau"
+            class="itau show"
             href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
             target="_blank"
             rel="noreferrer">Itaú Unibanco</a
@@ -63,7 +83,17 @@
         margin-bottom: 1.5rem;
     }
 
-    .footer {
-        margin-bottom: 4rem;
+    .no-show {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+        transition: all 1s;
+        transition-delay: 1s;
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
     }
 </style>
