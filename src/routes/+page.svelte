@@ -4,10 +4,12 @@
   import { jobList } from "../data/jobs";
   import Description from "../components/Description.svelte";
   import Presentation from "../components/Presentation.svelte";
+  import Navigation from "../components/Navigation.svelte";
 </script>
 
 <div class="container">
-  <div class="row initial-presentation">
+  <Navigation />
+  <div class="row initial-presentation" id="about">
     <Presentation />
     <Description />
   </div>

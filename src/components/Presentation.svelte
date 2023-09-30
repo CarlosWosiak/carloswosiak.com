@@ -45,10 +45,6 @@
 </div>
 
 <style>
-    .initial-presentation {
-        margin: 4rem 0;
-    }
-
     .main-photo {
         padding: 1rem 4rem 0 0;
     }
