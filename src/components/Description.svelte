@@ -112,4 +112,14 @@
     p:nth-child(3) {
         transition-delay: 1.6s;
     }
+
+    @media (max-width: 768px) {
+        p:nth-child(2) {
+            transition-delay: 0.5s;
+        }
+
+        p:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+    }
 </style>
