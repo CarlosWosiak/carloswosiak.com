@@ -18,37 +18,42 @@
 </script>
 
 <div
-    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description no-show"
+    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description overflow-hidden"
 >
-    <p>
-        Hi! I am Carlos, a Software Engineer at <a
-            class="itau show"
-            href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
-            target="_blank"
-            rel="noreferrer">Itaú Unibanco</a
-        >, the largest banking institution in LATAM. I develop scalable and
-        cost-efficient applications using
-        <span class="csharp">C#</span>,
-        <span class="dotnet">.NET</span>,
-        <span class="AWS">AWS</span>,
-        <span class="angular">Angular</span>,
-        <span class="python">Python</span>, and SQL Server, following the best
-        practices for security and performance.
-    </p>
-    <p>
-        I have a bachelor's degree in Software Engineering, a certification in <span
-            class="custom-stack AWS">AWS</span
-        >, domain expertise in the FIX Protocol and Financial trading exchanges.
-        I am passionate about learning new technologies and sharing knowledge
-        with others.
-    </p>
-    <p>
-        I have given training courses and presented at conferences on various
-        topics related to software development.
-    </p>
+    <div class="no-show">
+        <p>
+            Hi! I am Carlos, a Software Engineer at <a
+                class="itau show"
+                href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
+                target="_blank"
+                rel="noreferrer">Itaú Unibanco</a
+            >, the largest banking institution in LATAM. I develop scalable and
+            cost-efficient applications using
+            <span class="csharp">C#</span>,
+            <span class="dotnet">.NET</span>,
+            <span class="AWS">AWS</span>,
+            <span class="angular">Angular</span>,
+            <span class="python">Python</span>, and SQL Server, following the
+            best practices for security and performance.
+        </p>
+        <p>
+            I have a bachelor's degree in Software Engineering, a certification
+            in <span class="custom-stack AWS">AWS</span>, domain expertise in
+            the FIX Protocol and Financial trading exchanges. I am passionate
+            about learning new technologies and sharing knowledge with others.
+        </p>
+        <p>
+            I have given training courses and presented at conferences on
+            various topics related to software development.
+        </p>
+    </div>
 </div>
 
 <style>
+    .overflow-hidden {
+        overflow-x: hidden;
+    }
+
     .itau {
         font-weight: 800;
         color: white;
@@ -77,7 +82,7 @@
         color: #f28e46;
     }
 
-    .profile-description > p {
+    .profile-description > div > p {
         font-size: 1.2rem;
         margin-bottom: 1.5rem;
     }
@@ -87,7 +92,7 @@
         filter: blur(5px);
         transform: translateX(100%);
         transition: all 1s;
-        transition-delay: 1s;
+        transition-delay: 0.7s;
     }
 
     .show {

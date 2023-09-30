@@ -5,28 +5,11 @@
     export let company = "";
     export let description = "";
     export let stack = [""];
-
-    import { onMount } from "svelte";
-
-    onMount(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
-            });
-        });
-
-        const hiddenElements = document.querySelectorAll(".no-show");
-        hiddenElements.forEach((hiddenElement) =>
-            observer.observe(hiddenElement)
-        );
-    });
 </script>
 
-<div class="row container no-show">
+<div class="row container">
     <div
-        class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 job-entry show"
+        class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 job-entry"
     >
         <div class="row">
             <div class="job-period">{startDate} - {endDate}</div>
@@ -72,18 +55,5 @@
 
     .badge:hover {
         background: #15171f3d;
-    }
-
-    .no-show {
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateY(100%);
-        transition: all 1s;
-    }
-
-    .show {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateX(0);
     }
 </style>
