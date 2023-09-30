@@ -56,6 +56,10 @@
         color: white;
     }
 
+    li {
+        margin-bottom: 0.5rem;
+    }
+
     ul {
         list-style: none;
     }

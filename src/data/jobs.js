@@ -4,9 +4,9 @@ export const jobList = [{
     jobTitle: "Software Engineer",
     company: "Itaú Unibanco",
     description: [
-        'Developed highly scalable AWS Lambda functions using Python and .NET, efficiently processing millions of operations daily.',
+        'Developed highly scalable AWS Lambda functions using Python and .NET, efficiently processing millions of trading operations daily.',
         'Played a key role in the successful migration of our infrastructure to the AWS cloud.',
-        'Built and shipped systems using mostly AWS services, such as DynamoDB, RDS, Lambdas, Step Functions and EC2 instances',
+        'Built and shipped systems using mostly AWS services, such as DynamoDB, RDS, Lambdas, Step Functions, CloudWatch, S3, SNS, SQS and EC2 instances.',
         'Recognized as a top talent within the organization, I received a 100% monthly salary bonus for my contributions.'],
     stack: ['C#', 'AWS', 'Python', 'Angular', '.NET', 'Docker', 'Kafka']
 }, {
@@ -15,34 +15,33 @@ export const jobList = [{
     jobTitle: "Software Engineer",
     company: "Kolina Labs",
     description: [
-    'Developed applications in dockerized NodeJS, Laravel, Vue, Python and Svelte', 
+    'Developed applications in dockerized NodeJS, Laravel, Vue, Python and Svelte.', 
     'Gave training courses and share knowledge with the team, increasing the tech stack used across our projects.',
-    'Maintained a reliable platform with millions of dollars transacted monthly',
-    'Collaborated with other engineers to create a very complex system to calculate required equipment in the photovoltaic industry'],
+    'Maintained a reliable platform with millions of dollars transacted monthly.',
+    'Collaborated with other engineers to create a very complex system to calculate required equipment in the photovoltaic industry.'],
     stack: ['Vue', 'NodeJs', 'Quasar', 'Angular', 'PHP', 'Laravel']
 },
 {
     startDate: "2020",
     endDate: "2020",
     jobTitle: "Fullstack Web Development Freelancer",
-    description: [`Amid the COVID-19 pandemic I worked remotely full time, 
-    despite everything that was happening at the time it was a great experience 
-    where I had many clients that gave me excellent and helpful feedback.`],
-    stack: ['Ruby on Rails', 'React']
+    description: [
+        'Built and shipped a platform to subscribe to a monthly vegetable basket delivery service, using Angular, Ruby on Rails and PostgreSQL on a Digital Ocean infrastructure.',
+        'Architected and implemented a system to register and hire academic text proofreaders, using React, Ruby on Rails and PostgreSQL',
+        'Created a page in React to process X-Ray for a health company.',
+        'Improved a item select page for a food delivery company.'
+    ],
+    stack: ['Ruby on Rails', 'React', 'Angular']
 },
 {
     startDate: "2015",
     endDate: "2020",
     jobTitle: "Web Developer",
     company: "Almix Internet",
-    description: [`Almix is a ISP company, while working there for many years I had
-    many responsibilities, such as development of the company
-    website and internal systems (mostly using Angular, PHP, SQL and
-    NoSQL databases);
-    Implementation of agile methods to increase the efficiency of the support 
-    tickets (when I started in the company it was used only printed sheets to each ticket,I
-    suggested and implemented management through mobile and desktop
-    tools); I worked with the design and marketing of the company.`],
+    description: [
+    'Developed the company website and internal systems on Angular, PHP and MySQL.',
+    'Using Agile methods migrated all printed ticket to digital, highly increasing productivity and reducing paper waste.',
+    'I worked with the design and marketing of the company.'],
     stack: ['PHP', 'Angular', 'MySQL']
 }
 ]
