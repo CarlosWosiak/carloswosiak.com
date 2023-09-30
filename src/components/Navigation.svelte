@@ -13,9 +13,9 @@
             </a>
         </li>
         <li>
-            <a href="#projects"
+            <a href="#contact"
                 ><div class="indicator" />
-                <span>Projects</span></a
+                <span>Contact</span></a
             >
         </li>
     </ul>
@@ -26,7 +26,7 @@
         z-index: 100;
         position: fixed;
         display: flex;
-        top: 8rem;
+        top: 7rem;
         left: 1rem;
     }
 

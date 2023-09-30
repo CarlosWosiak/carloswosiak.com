@@ -18,15 +18,15 @@
 </script>
 
 <div
-    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 no-show"
+    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 show"
 >
-    <div class="main-photo show">
+    <div class="main-photo no-show">
         <img
             src="https://portfolio-cw.s3.amazonaws.com/profile.jpg"
             alt="carlos wosiak @ Machu Picchu"
         />
     </div>
-    <h1>
+    <h1 class="no-show" id="name">
         Carlos Wosiak
         <small
             >Software Engineer at
@@ -38,7 +38,7 @@
             ></small
         >
     </h1>
-    <h2>
+    <h2 class="no-show" id="description">
         I develop scalable and cost-efficient applications following the best
         practices for security and performance.
     </h2>
@@ -82,13 +82,21 @@
     .no-show {
         opacity: 0;
         filter: blur(5px);
-        transform: translateX(-100%);
-        transition: all 1s;
+        transform: translateY(30px);
+        transition: all 0.3s;
+    }
+
+    #name {
+        transition-delay: 0.5s !important;
+    }
+
+    #description {
+        transition-delay: 0.8s !important;
     }
 
     .show {
         opacity: 1;
         filter: blur(0);
-        transform: translateX(0);
+        transform: translateY(0);
     }
 </style>

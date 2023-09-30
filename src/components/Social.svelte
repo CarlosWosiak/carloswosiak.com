@@ -61,19 +61,19 @@
     .social {
         position: fixed;
         display: flex;
-        top: 1rem;
+        bottom: 2rem;
         left: 1rem;
     }
 
     .social-icon {
         font-size: 0.75rem;
         line-height: 1rem;
-        margin-right: 2rem;
+        margin-bottom: 2rem;
     }
 
     .social-span {
-        width: 2rem;
-        height: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
         color: rgba(255, 255, 255, 0.712);
         transition: 0.5s;
     }
@@ -97,6 +97,7 @@
     .social-list {
         align-items: center;
         display: flex;
+        flex-direction: column;
         margin-top: 2rem;
         margin-left: 0.25rem;
         list-style: none;
@@ -105,6 +106,14 @@
     @media screen and (max-width: 768px) {
         .social {
             position: inherit;
+        }
+        .social-list {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .social-icon {
+            margin-right: 2rem;
         }
     }
 </style>

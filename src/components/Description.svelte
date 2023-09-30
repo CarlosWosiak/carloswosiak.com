@@ -20,8 +20,8 @@
 <div
     class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description overflow-hidden"
 >
-    <div class="no-show">
-        <p>
+    <div>
+        <p class="no-show">
             Hi! I am Carlos, a Software Engineer at <a
                 class="itau show"
                 href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
@@ -36,13 +36,13 @@
             <span class="python">Python</span>, and SQL Server, following the
             best practices for security and performance.
         </p>
-        <p>
+        <p class="no-show">
             I have a bachelor's degree in Software Engineering, a certification
             in <span class="custom-stack AWS">AWS</span>, domain expertise in
             the FIX Protocol and Financial trading exchanges. I am passionate
             about learning new technologies and sharing knowledge with others.
         </p>
-        <p>
+        <p class="no-show">
             I have given training courses and presented at conferences on
             various topics related to software development.
         </p>
@@ -91,13 +91,25 @@
         opacity: 0;
         filter: blur(5px);
         transform: translateX(100%);
-        transition: all 1s;
-        transition-delay: 0.7s;
+        transition: all 0.3s;
+        transition-delay: 1s;
     }
 
     .show {
         opacity: 1;
         filter: blur(0);
         transform: translateX(0);
+    }
+
+    p:nth-child(1) {
+        transition-delay: 1s;
+    }
+
+    p:nth-child(2) {
+        transition-delay: 1.3s;
+    }
+
+    p:nth-child(3) {
+        transition-delay: 1.6s;
     }
 </style>

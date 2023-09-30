@@ -75,8 +75,8 @@
     .animate {
         opacity: 0;
         filter: blur(5px);
-        transform: translateY(100%);
-        transition: all 1s;
+        transform: translateY(50%);
+        transition: all 0.3s;
     }
 
     .show {
