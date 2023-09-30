@@ -1,13 +1,30 @@
 <script>
     import Logo from "$lib/assets/logo.png";
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(".animate");
+        hiddenElements.forEach((hiddenElement) =>
+            observer.observe(hiddenElement)
+        );
+    });
 </script>
 
-<div class="logo">
+<div class="show" />
+<div class="logo animate">
     <a href="#about">
         <img src={Logo} alt="logo" />
     </a>
 </div>
-<div class="background-logo" />
+<div class="background-logo animate" />
 
 <style>
     .logo {
@@ -36,6 +53,28 @@
         width: 3rem;
         background: #1f465c;
         border-radius: 10px;
+    }
+
+    .animate {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-50%);
+        transition: all 0.3s;
+        transition-delay: 1.8s;
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    @media (max-width: 600px) {
+        .animate {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
     }
 
     @media (max-width: 968px) {

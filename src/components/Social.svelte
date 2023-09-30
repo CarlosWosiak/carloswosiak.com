@@ -1,6 +1,25 @@
-<div class="social">
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(".animate");
+        hiddenElements.forEach((hiddenElement) =>
+            observer.observe(hiddenElement)
+        );
+    });
+</script>
+
+<div class="social show">
     <ul class="social-list" aria-label="Social media">
-        <li class="social-icon">
+        <li class="social-icon animate">
             <a
                 class="block hover:text-slate-200"
                 href="https://github.com/carloswosiak"
@@ -18,7 +37,7 @@
                 ></a
             >
         </li>
-        <li class="social-icon">
+        <li class="social-icon animate">
             <a
                 class="block hover:text-slate-200"
                 href="https://instagram.com/carloswosiak"
@@ -36,7 +55,7 @@
                 ></a
             >
         </li>
-        <li class="social-icon">
+        <li class="social-icon animate">
             <a
                 class="block hover:text-slate-200"
                 href="https://www.linkedin.com/in/carloswosiak/"
@@ -101,6 +120,32 @@
         margin-top: 2rem;
         margin-left: 0.25rem;
         list-style: none;
+    }
+
+    .animate {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-50%);
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    li:nth-child(1) {
+        transition-delay: 3s;
+    }
+
+    li:nth-child(2) {
+        transition-delay: 3.3s;
+    }
+
+    li:nth-child(3) {
+        transition-delay: 3.6s;
     }
 
     @media screen and (max-width: 768px) {

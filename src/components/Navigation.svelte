@@ -1,18 +1,37 @@
-<div class="navigation">
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(".animate");
+        hiddenElements.forEach((hiddenElement) =>
+            observer.observe(hiddenElement)
+        );
+    });
+</script>
+
+<div class="navigation show">
     <ul>
-        <li>
+        <li class="animate">
             <a href="#about"
                 ><div class="indicator" />
                 <span>About</span>
             </a>
         </li>
-        <li>
+        <li class="animate">
             <a href="#experience">
                 <div class="indicator" />
                 <span>Experience</span>
             </a>
         </li>
-        <li>
+        <li class="animate">
             <a href="#contact"
                 ><div class="indicator" />
                 <span>Contact</span></a
@@ -63,6 +82,40 @@
     @media (max-width: 968px) {
         .navigation {
             display: none;
+        }
+    }
+
+    .animate {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-50%);
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    li:nth-child(1) {
+        transition-delay: 2.1s;
+    }
+
+    li:nth-child(2) {
+        transition-delay: 2.4s;
+    }
+
+    li:nth-child(3) {
+        transition-delay: 2.7s;
+    }
+
+    @media (max-width: 600px) {
+        .animate {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
         }
     }
 </style>

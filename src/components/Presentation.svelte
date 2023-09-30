@@ -47,6 +47,7 @@
 <style>
     .main-photo {
         padding: 1rem 4rem 0 0;
+        transition: all 0.2s;
     }
     .main-photo > img {
         border-radius: 2rem;
