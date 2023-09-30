@@ -3,7 +3,7 @@
     export let endDate = "";
     export let jobTitle = "";
     export let company = "";
-    export let description = "";
+    export let description = [""];
     export let stack = [""];
 
     import { onMount } from "svelte";
@@ -28,12 +28,17 @@
     >
         <div class="row">
             <div class="job-period">{startDate} - {endDate}</div>
-            <h3>{jobTitle}{company ? ` - ${company}` : ""}</h3>
+            <h3>
+                {jobTitle}
+                <span class="company">{company ? ` @ ${company}` : ""}</span>
+            </h3>
         </div>
         <div class="row">
-            <p>
-                {description}
-            </p>
+            <ul>
+                {#each description as point}
+                    <li>{point}</li>
+                {/each}
+            </ul>
         </div>
         <div class="row">
             {#each stack as tech}
@@ -44,6 +49,17 @@
 </div>
 
 <style>
+    ul li::before {
+        content: "▹";
+        position: absolute;
+        left: 0px;
+        color: white;
+    }
+
+    ul {
+        list-style: none;
+    }
+
     .job-period {
         align-self: center;
         margin-right: 2rem;
@@ -85,6 +101,10 @@
         transform: translateX(0);
     }
 
+    .company {
+        font-weight: 600;
+        color: white;
+    }
     @media (max-width: 600px) {
         .animate {
             opacity: 1;
