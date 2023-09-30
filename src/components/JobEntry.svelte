@@ -97,6 +97,7 @@
         filter: blur(5px);
         transform: translateY(50%);
         transition: all 0.3s;
+        transition-delay: 1s;
     }
 
     .show {
