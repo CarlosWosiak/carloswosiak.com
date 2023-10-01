@@ -27,7 +27,7 @@
         />
     </div>
     <h1 class="no-show" id="name">
-        Carlos Wosiak
+        Carlos Wosiakão
         <small
             >Software Engineer at
             <a
