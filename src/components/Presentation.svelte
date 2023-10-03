@@ -20,12 +20,6 @@
 <div
     class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 show"
 >
-    <div class="main-photo no-show">
-        <img
-            src="https://portfolio-cw.s3.amazonaws.com/profile.jpg"
-            alt="carlos wosiak @ Machu Picchu"
-        />
-    </div>
     <h1 class="no-show" id="name">
         Carlos Wosiak
         <small
@@ -38,6 +32,12 @@
             ></small
         >
     </h1>
+    <div class="no-show" id="main-photo">
+        <img
+            src="https://portfolio-cw.s3.amazonaws.com/profile.jpg"
+            alt="carlos wosiak @ Machu Picchu"
+        />
+    </div>
     <h2 class="no-show" id="description">
         I develop scalable and cost-efficient applications following the best
         practices for security and performance.
@@ -45,11 +45,13 @@
 </div>
 
 <style>
-    .main-photo {
+    #main-photo {
         padding: 1rem 4rem 0 0;
         transition: all 0.2s;
+        transition-delay: 0.9s;
     }
-    .main-photo > img {
+
+    #main-photo > img {
         border-radius: 2rem;
     }
 
