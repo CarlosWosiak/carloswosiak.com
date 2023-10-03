@@ -8,7 +8,7 @@ export const jobList = [{
         'Played a key role in the successful migration of our infrastructure to the AWS cloud.',
         'Built and shipped systems using mostly AWS services, such as DynamoDB, RDS, Lambdas, Step Functions, CloudWatch, S3, SNS, SQS and EC2 instances.',
         'Recognized as a top talent within the organization, I received a 100% monthly salary bonus for my contributions.',
-        'Deliver high-quality, robust production code for a diverse array of projects, including trading sessions with Bloomberg, CitiBank, JPMorgan and Credit Suisse',
+        'delivered high-quality, robust production code for a diverse array of projects, including trading sessions with Bloomberg, CitiBank, JPMorgan and Credit Suisse',
     ],
     stack: ['C#', 'AWS', 'Python', 'Angular', '.NET', 'Docker', 'Kafka']
 }, {
@@ -43,7 +43,7 @@ export const jobList = [{
     description: [
     'Developed the company website and internal systems on Angular, PHP and MySQL.',
     'Using Agile methods migrated all printed tickets to digital, highly increasing productivity and reducing paper waste.',
-    'I worked with the advertisement design and marketing of the company.'],
+    'Created the advertisement design and marketing of the company using Adobe Illustrator and Photoshop.'],
     stack: ['PHP', 'Angular', 'MySQL']
 }
 ]
