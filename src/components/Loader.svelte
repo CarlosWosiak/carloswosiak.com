@@ -22,7 +22,7 @@
         left: 0;
         overflow: hidden;
         background: linear-gradient(45deg, #081218, #050f41, #135c77);
-        background-size: 400% 400%;
+        background-size: 200% 200%;
         height: 100vh;
         width: 100vw;
         display: grid;
