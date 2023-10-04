@@ -48,7 +48,7 @@
     #main-photo {
         padding: 1rem 4rem 0 0;
         transition: all 0.2s;
-        transition-delay: 0.9s;
+        transition-delay: 0.5s;
     }
 
     #main-photo > img {
@@ -90,11 +90,11 @@
     }
 
     #name {
-        transition-delay: 0.5s !important;
+        transition-delay: 0.3s !important;
     }
 
     #description {
-        transition-delay: 0.8s !important;
+        transition-delay: 0.5s !important;
     }
 
     .show {

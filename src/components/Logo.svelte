@@ -60,7 +60,7 @@
         filter: blur(5px);
         transform: translateX(-50%);
         transition: all 0.3s;
-        transition-delay: 1.8s;
+        transition-delay: 1.3s;
     }
 
     .show {

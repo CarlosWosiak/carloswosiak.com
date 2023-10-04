@@ -92,7 +92,7 @@
         filter: blur(5px);
         transform: translateX(100%);
         transition: all 0.3s;
-        transition-delay: 1s;
+        transition-delay: 0.7s;
     }
 
     .show {
@@ -102,15 +102,15 @@
     }
 
     p:nth-child(1) {
-        transition-delay: 1s;
+        transition-delay: 0.7s;
     }
 
     p:nth-child(2) {
-        transition-delay: 1.3s;
+        transition-delay: 0.9s;
     }
 
     p:nth-child(3) {
-        transition-delay: 1.6s;
+        transition-delay: 1.1s;
     }
 
     @media (max-width: 768px) {

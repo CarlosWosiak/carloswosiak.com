@@ -7,21 +7,34 @@
   import Navigation from "../components/Navigation.svelte";
   import Logo from "../components/Logo.svelte";
   import Contact from "../components/Contact.svelte";
+  import Loader from "../components/Loader.svelte";
+  import { onMount } from "svelte";
+  let showLoader = true;
+
+  onMount(() => {
+    setTimeout(() => {
+      showLoader = false;
+    }, 1200);
+  });
 </script>
 
-<div class="container">
-  <Logo />
-  <Navigation />
-  <div class="row initial-presentation" id="about">
-    <Presentation />
-    <Description />
+{#if showLoader}
+  <Loader />
+{:else}
+  <div class="container no-show">
+    <Logo />
+    <Navigation />
+    <div class="row initial-presentation" id="about">
+      <Presentation />
+      <Description />
+    </div>
+    {#each jobList as job}
+      <JobEntry {...job} />
+    {/each}
+    <Contact />
+    <Footer />
   </div>
-  {#each jobList as job}
-    <JobEntry {...job} />
-  {/each}
-  <Contact />
-  <Footer />
-</div>
+{/if}
 
 <style>
   .initial-presentation {

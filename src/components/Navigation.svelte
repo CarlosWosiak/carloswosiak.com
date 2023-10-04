@@ -100,15 +100,15 @@
     }
 
     li:nth-child(1) {
-        transition-delay: 2.1s;
+        transition-delay: 1.5s;
     }
 
     li:nth-child(2) {
-        transition-delay: 2.4s;
+        transition-delay: 1.6s;
     }
 
     li:nth-child(3) {
-        transition-delay: 2.7s;
+        transition-delay: 1.7s;
     }
 
     @media (max-width: 600px) {
