@@ -56,7 +56,7 @@
     a {
         display: flex;
         color: rgb(202, 202, 202);
-        font-size: 1.3rem;
+        font-size: 1rem;
         text-decoration: none;
     }
 
@@ -70,8 +70,8 @@
     }
 
     .indicator {
-        width: 2rem;
-        height: 0.2rem;
+        width: 1.3rem;
+        height: 0.1rem;
         border-radius: 1rem;
         background: rgb(202, 202, 202);
         margin-right: 0.6rem;

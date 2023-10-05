@@ -75,6 +75,7 @@
         </li>
     </ul>
 </div>
+<div class="indicator animate" />
 
 <style>
     .social {
@@ -91,8 +92,8 @@
     }
 
     .social-span {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1rem;
+        height: 1rem;
         color: rgba(255, 255, 255, 0.712);
         transition: 0.5s;
     }
@@ -147,6 +148,20 @@
     li:nth-child(3) {
         transition-delay: 2.1s;
     }
+    .indicator {
+        position: fixed;
+        display: flex;
+        bottom: 0;
+        left: 2.5rem;
+        width: 0.1rem;
+        height: 3rem;
+        border-radius: 1rem;
+        background: rgb(202, 202, 202);
+        margin-right: 0.6rem;
+        align-self: center;
+        transition: all 0.2s;
+        transition-delay: 2.3s;
+    }
 
     @media screen and (max-width: 768px) {
         .social {
@@ -159,6 +174,9 @@
 
         .social-icon {
             margin-right: 2rem;
+        }
+        .indicator {
+            display: none;
         }
     }
 </style>
