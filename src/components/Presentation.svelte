@@ -53,22 +53,26 @@
 
     #main-photo > img {
         border-radius: 2rem;
+        min-height: 10rem;
+        min-width: 10rem;
     }
 
     h1 {
         font-size: 3rem;
         font-weight: 700;
+        color: #fff6f6;
     }
 
     h1 > small {
         font-size: 1.5rem;
         font-weight: 300;
-        color: #cfcfcf;
+        color: #e7e7e7;
     }
 
     h2 {
         font-size: 1.2rem;
         font-weight: 400;
+        color: #e7e7e7;
     }
 
     .itau {
