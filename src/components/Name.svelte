@@ -18,6 +18,9 @@
 </div>
 
 <style>
+    #name {
+        transition-delay: 0.3s !important;
+    }
     h1 {
         font-size: 3rem;
         font-weight: 700;
