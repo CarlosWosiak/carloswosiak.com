@@ -28,8 +28,8 @@
       <Presentation />
       <Description />
     </div>
-    {#each jobList as job}
-      <JobEntry {...job} />
+    {#each jobList as job, i}
+      <JobEntry {...job} delayShow={i == 0} />
     {/each}
     <Contact />
     <Footer />

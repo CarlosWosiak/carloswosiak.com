@@ -5,6 +5,7 @@
     export let company = "";
     export let description = [""];
     export let stack = [""];
+    export let delayShow = false;
 
     import { onMount } from "svelte";
 
@@ -24,6 +25,7 @@
 <div class="row container show">
     <div
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 job-entry animate"
+        style={delayShow ? "transition-delay: 1s;" : ""}
         id="experience"
     >
         <div class="row">
@@ -97,7 +99,7 @@
         filter: blur(5px);
         transform: translateY(50%);
         transition: all 0.3s;
-        transition-delay: 1s;
+        transition-delay: 0.1s;
     }
 
     .show {
