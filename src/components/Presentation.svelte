@@ -46,12 +46,15 @@
 
 <style>
     #main-photo {
-        padding: 1rem 4rem 0 0;
+        position: relative;
+        padding-bottom: calc((700 / 900) * 100%);
+
         transition: all 0.2s;
         transition-delay: 0.5s;
     }
 
     #main-photo > img {
+        position: absolute;
         border-radius: 2rem;
         min-height: 10rem;
         min-width: 10rem;
