@@ -37,10 +37,11 @@
             best practices for security and performance.
         </p>
         <p class="no-show">
-            I have a bachelor's degree in Software Engineering, a certification
-            in <span class="custom-stack AWS">AWS</span>, domain expertise in
-            the FIX Protocol and Financial trading exchanges. I am passionate
-            about learning new technologies and sharing knowledge with others.
+            I have a bachelor's degree in Software Engineering, <span
+                class="custom-stack AWS">AWS</span
+            > certification, domain expertise in the FIX Protocol and Financial trading
+            exchanges. I am passionate about learning new technologies and sharing
+            knowledge with others.
         </p>
         <p class="no-show">
             I have given training courses and presented at conferences on
