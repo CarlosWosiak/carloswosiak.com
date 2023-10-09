@@ -132,9 +132,9 @@
     }
 
     .email {
-        color: #42fffc;
+        color: var(--accent);
         background-color: transparent;
-        border: 2px solid #42fffc;
+        border: 2px solid var(--accent);
         border-radius: 0.3rem;
         font-weight: 700;
         padding: 1.25rem 1.75rem;

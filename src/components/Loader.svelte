@@ -60,7 +60,7 @@
         position: absolute;
         inset: 0;
         background: #110d31;
-        border: solid 1px #42fffc;
+        border: solid 1px var(--accent);
     }
     .cube-face.shadow {
         transform: translateZ(-80px);
