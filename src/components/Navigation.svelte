@@ -61,12 +61,12 @@
     }
 
     li:hover a {
-        color: white;
+        color: var(--accent);
     }
 
     li:hover .indicator {
         width: 3rem;
-        color: white;
+        background: var(--accent);
     }
 
     .indicator {

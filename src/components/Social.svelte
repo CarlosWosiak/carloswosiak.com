@@ -21,7 +21,6 @@
     <ul class="social-list" aria-label="Social media">
         <li class="social-icon animate">
             <a
-                class="block hover:text-slate-200"
                 href="https://github.com/carloswosiak"
                 target="_blank"
                 rel="noreferrer"
@@ -39,7 +38,6 @@
         </li>
         <li class="social-icon animate">
             <a
-                class="block hover:text-slate-200"
                 href="https://instagram.com/carloswosiak"
                 target="_blank"
                 rel="noreferrer"
@@ -57,7 +55,6 @@
         </li>
         <li class="social-icon animate">
             <a
-                class="block hover:text-slate-200"
                 href="https://www.linkedin.com/in/carloswosiak/"
                 target="_blank"
                 rel="noreferrer"
@@ -99,7 +96,7 @@
     }
 
     .social-span:hover {
-        color: white;
+        color: var(--accent);
     }
 
     .sr-only {
