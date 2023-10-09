@@ -33,7 +33,7 @@
       </div>
     </div>
     {#each jobList as job, i}
-      <JobEntry {...job} delayShow={i == 0} />
+      <JobEntry {...job} isFirst={i == 0} />
     {/each}
     <Contact />
     <Footer />

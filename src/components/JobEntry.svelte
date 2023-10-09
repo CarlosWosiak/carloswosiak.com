@@ -5,7 +5,7 @@
     export let company = "";
     export let description = [""];
     export let stack = [""];
-    export let delayShow = false;
+    export let isFirst = false;
 
     import { onMount } from "svelte";
 
@@ -24,28 +24,38 @@
 
 <div class="row container show">
     <div
-        class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 job-entry animate"
-        style={delayShow ? "transition-delay: 1s;" : ""}
+        class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
+        style={isFirst ? "transition-delay: 1s;" : ""}
         id="experience"
     >
-        <div class="row">
-            <div class="job-period">{startDate} - {endDate}</div>
+        {#if isFirst}
             <h3>
-                {jobTitle}
-                <span class="company">{company ? ` @ ${company}` : ""}</span>
+                <span class="title-number">01.</span>
+                <div class="title">Experience</div>
+                <div class="separator" />
             </h3>
-        </div>
-        <div class="row">
-            <ul>
-                {#each description as point}
-                    <li>{point}</li>
+        {/if}
+        <div class="job-entry">
+            <div class="row">
+                <div class="job-period">{startDate} - {endDate}</div>
+                <h3>
+                    {jobTitle}
+                    <span class="company">{company ? ` @ ${company}` : ""}</span
+                    >
+                </h3>
+            </div>
+            <div class="row">
+                <ul>
+                    {#each description as point}
+                        <li>{point}</li>
+                    {/each}
+                </ul>
+            </div>
+            <div class="row">
+                {#each stack as tech}
+                    <div class="badge">{tech}</div>
                 {/each}
-            </ul>
-        </div>
-        <div class="row">
-            {#each stack as tech}
-                <div class="badge">{tech}</div>
-            {/each}
+            </div>
         </div>
     </div>
 </div>
@@ -66,6 +76,33 @@
         list-style: none;
     }
 
+    h3 {
+        display: flex;
+    }
+
+    .title-number {
+        color: var(--accent);
+        margin-right: 0.6rem;
+    }
+
+    .title {
+        font-weight: 600;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .separator {
+        bottom: 0;
+        left: 2.5rem;
+        width: 40%;
+        height: 0.1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.103);
+        margin-left: 1rem;
+        align-self: center;
+        transition: all 0.2s;
+        transition-delay: 2.3s;
+    }
     .job-period {
         align-self: center;
         margin-right: 2rem;
