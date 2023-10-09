@@ -25,7 +25,6 @@
 <div class="row container show">
     <div
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-        style={isFirst ? "transition-delay: 1s;" : ""}
         id="experience"
     >
         {#if isFirst}
