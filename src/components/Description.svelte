@@ -47,6 +47,14 @@
             I have given training courses and presented at conferences on
             various topics related to software development.
         </p>
+        <p class="contact no-show">
+            <a
+                class="email"
+                href="mailto:carlosw403@hotmail.com"
+                rel="noopener noreferrer"
+                target="_blank">E-mail me</a
+            >
+        </p>
     </div>
 </div>
 
@@ -114,12 +122,43 @@
         transition-delay: 1.1s;
     }
 
+    p:nth-child(4) {
+        transition-delay: 1.3s;
+    }
+
+    .contact {
+        text-align: center;
+        padding-top: 2.5rem;
+    }
+
+    .email {
+        color: #42fffc;
+        background-color: transparent;
+        border: 2px solid #42fffc;
+        border-radius: 0.3rem;
+        font-weight: 700;
+        padding: 1.25rem 1.75rem;
+        font-size: 1rem;
+        line-height: 1;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 1rem;
+        transition: all 0.3s;
+    }
+
+    .email:hover {
+        font-size: 1.2rem;
+    }
     @media (max-width: 768px) {
         p:nth-child(2) {
             transition-delay: 0.5s;
         }
 
         p:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+
+        p:nth-child(4) {
             transition-delay: 0.5s;
         }
     }

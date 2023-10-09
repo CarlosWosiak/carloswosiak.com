@@ -61,10 +61,6 @@
         transition: all 0.3s;
     }
 
-    #name {
-        transition-delay: 0.3s !important;
-    }
-
     #description {
         transition-delay: 0.5s !important;
     }

@@ -66,10 +66,11 @@
     }
 
     .email {
-        color: rgb(188 202 247);
+        color: #42fffc;
         background-color: transparent;
-        border: 1px solid rgb(104, 133, 231);
+        border: 2px solid #42fffc;
         border-radius: 0.3rem;
+        font-weight: 700;
         padding: 1.25rem 1.75rem;
         font-size: 1rem;
         line-height: 1;
