@@ -38,9 +38,12 @@
             <div class="row">
                 <div class="job-period">{startDate} - {endDate}</div>
                 <h3>
-                    {jobTitle}
-                    <span class="company">{company ? ` @ ${company}` : ""}</span
-                    >
+                    <span class="entry">
+                        {jobTitle}
+                        <span class="company">
+                            {company ? ` @ ${company}` : ""}
+                        </span>
+                    </span>
                 </h3>
             </div>
             <div class="row">
