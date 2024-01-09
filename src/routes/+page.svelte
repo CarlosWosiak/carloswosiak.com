@@ -5,8 +5,8 @@
   import Logo from "../components/Logo.svelte";
   import Contact from "../components/Contact.svelte";
   import Loader from "../components/Loader.svelte";
+  import Introduction from "../components/Introduction/Introduction.svelte";
   import { onMount } from "svelte";
-  import Introduction from "../components/Introduction.svelte";
   let showLoader = true;
 
   onMount(() => {
