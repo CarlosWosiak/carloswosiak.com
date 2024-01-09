@@ -1,11 +1,5 @@
 <script>
-    export let startDate = "";
-    export let endDate = "";
-    export let jobTitle = "";
-    export let company = "";
-    export let description = [""];
-    export let stack = [""];
-    export let isFirst = false;
+    import { jobList } from "../data/jobs";
 
     import { onMount } from "svelte";
 
@@ -27,39 +21,46 @@
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
         id="experience"
     >
-        {#if isFirst}
-            <h3>
-                <span class="title-number">01.</span>
-                <div class="title">Experience</div>
-                <div class="separator" />
-            </h3>
-        {/if}
-        <div class="job-entry">
-            <div class="row">
-                <div class="job-period">{startDate} - {endDate}</div>
-                <h3>
-                    <span class="entry">
-                        {jobTitle}
-                        <span class="company">
-                            {company ? ` @ ${company}` : ""}
+        <h3>
+            <span class="title-number">01.</span>
+            <div class="title">Experience</div>
+            <div class="separator" />
+        </h3>
+    </div>
+    {#each jobList as job}
+        <div
+            class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
+            id="experience"
+        >
+            <div class="job-entry">
+                <div class="row">
+                    <div class="job-period">
+                        {job.startDate} - {job.endDate}
+                    </div>
+                    <h3>
+                        <span class="entry">
+                            {job.jobTitle}
+                            <span class="company">
+                                {job.company ? ` @ ${job.company}` : ""}
+                            </span>
                         </span>
-                    </span>
-                </h3>
-            </div>
-            <div class="row">
-                <ul>
-                    {#each description as point}
-                        <li>{point}</li>
+                    </h3>
+                </div>
+                <div class="row">
+                    <ul>
+                        {#each job.description as point}
+                            <li>{point}</li>
+                        {/each}
+                    </ul>
+                </div>
+                <div class="row">
+                    {#each job.stack as tech}
+                        <div class="badge">{tech}</div>
                     {/each}
-                </ul>
-            </div>
-            <div class="row">
-                {#each stack as tech}
-                    <div class="badge">{tech}</div>
-                {/each}
+                </div>
             </div>
         </div>
-    </div>
+    {/each}
 </div>
 
 <style>
