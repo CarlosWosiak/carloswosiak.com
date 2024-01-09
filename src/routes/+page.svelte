@@ -19,12 +19,10 @@
 {#if showLoader}
   <Loader />
 {:else}
-  <div class="container no-show">
-    <Logo />
-    <Navigation />
-    <Introduction />
-    <Experience />
-    <Contact />
-    <Footer />
-  </div>
+  <Logo />
+  <Navigation />
+  <Introduction />
+  <Experience />
+  <Contact />
+  <Footer />
 {/if}

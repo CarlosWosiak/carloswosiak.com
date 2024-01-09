@@ -1,7 +1,7 @@
 <script>
-    import Description from "../Description.svelte";
+    import Description from "./Description.svelte";
     import Name from "./Name.svelte";
-    import Presentation from "../Presentation.svelte";
+    import Presentation from "./Presentation.svelte";
 </script>
 
 <div class="initial-presentation">
