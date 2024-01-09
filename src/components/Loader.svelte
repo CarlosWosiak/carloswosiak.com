@@ -15,6 +15,11 @@
         </div>
     </div>
 </div>
+<img
+    src="https://portfolio-cw.s3.amazonaws.com/profile.jpg"
+    alt="carlos wosiak @ Machu Picchu"
+    style="display: none"
+/>
 
 <style>
     .cover {
