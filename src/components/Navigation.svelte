@@ -12,7 +12,7 @@
 
         const hiddenElements = document.querySelectorAll(".animate");
         hiddenElements.forEach((hiddenElement) =>
-            observer.observe(hiddenElement)
+            observer.observe(hiddenElement),
         );
     });
 </script>
@@ -29,6 +29,18 @@
             <a href="#experience">
                 <div class="indicator" />
                 <span>Experience</span>
+            </a>
+        </li>
+        <li class="animate">
+            <a href="#certificate">
+                <div class="indicator" />
+                <span>Certificates</span>
+            </a>
+        </li>
+        <li class="animate">
+            <a href="#education">
+                <div class="indicator" />
+                <span>Education</span>
             </a>
         </li>
         <li class="animate">
@@ -109,6 +121,14 @@
 
     li:nth-child(3) {
         transition-delay: 1.7s;
+    }
+
+    li:nth-child(4) {
+        transition-delay: 1.9s;
+    }
+
+    li:nth-child(5) {
+        transition-delay: 2.1s;
     }
 
     @media (max-width: 600px) {
