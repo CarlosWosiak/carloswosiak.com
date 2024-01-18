@@ -1,4 +1,4 @@
-export const jobList = [{
+export const jobs = [{
     startDate: "2021",
     endDate: "Present",
     jobTitle: "Software Engineer",

@@ -12,7 +12,7 @@
 
         const hiddenElements = document.querySelectorAll(".no-show");
         hiddenElements.forEach((hiddenElement) =>
-            observer.observe(hiddenElement)
+            observer.observe(hiddenElement),
         );
     });
 </script>
@@ -22,6 +22,7 @@
 >
     <div class="no-show" id="main-photo">
         <img
+            draggable="false"
             src="https://portfolio-cw.s3.amazonaws.com/profile.jpg"
             alt="carlos wosiak @ Machu Picchu"
         />

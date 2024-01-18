@@ -1,5 +1,5 @@
 <script>
-    import { jobList } from "../data/jobs";
+    import { jobs } from "../data/jobs";
 
     import { onMount } from "svelte";
 
@@ -27,7 +27,7 @@
             <div class="separator" />
         </h3>
     </div>
-    {#each jobList as job}
+    {#each jobs as job}
         <div
             class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
             id="experience"

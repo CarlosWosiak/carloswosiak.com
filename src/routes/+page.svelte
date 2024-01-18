@@ -7,6 +7,8 @@
   import Loader from "../components/Loader.svelte";
   import Introduction from "../components/Introduction/Introduction.svelte";
   import { onMount } from "svelte";
+  import Certificates from "../components/Certificates.svelte";
+  import Education from "../components/Education.svelte";
   let showLoader = true;
 
   onMount(() => {
@@ -23,6 +25,8 @@
   <Navigation />
   <Introduction />
   <Experience />
+  <Certificates />
+  <Education />
   <Contact />
   <Footer />
 {/if}
