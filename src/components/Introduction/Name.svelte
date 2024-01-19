@@ -2,17 +2,18 @@
     <div
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 show"
     >
+        <h5>Hi, my name is</h5>
         <h1 class="no-show" id="name">
             Carlos Wosiak
-            <small
-                >Software Engineer at
+            <small>
+                I am a Software Engineer at
                 <a
                     class="itau"
                     href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
                     target="_blank"
                     rel="noreferrer">Itaú Unibanco</a
-                ></small
-            >
+                >
+            </small>
         </h1>
     </div>
 </div>
@@ -31,6 +32,10 @@
         font-size: 1.5rem;
         font-weight: 300;
         color: #e7e7e7;
+    }
+
+    h5 {
+        color: var(--accent);
     }
 
     .itau {

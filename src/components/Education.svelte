@@ -23,7 +23,7 @@
     >
         <h3>
             <span class="title-number">03.</span>
-            <div class="title">Education</div>
+            <div class="title">My degrees</div>
             <div class="separator" />
         </h3>
     </div>
@@ -56,6 +56,10 @@
         display: flex;
         font-weight: 600;
         color: white;
+    }
+
+    .container {
+        margin-top: 4rem;
     }
 
     .title-number {

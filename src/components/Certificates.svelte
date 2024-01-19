@@ -23,7 +23,7 @@
     >
         <h3>
             <span class="title-number">02.</span>
-            <div class="title">Certificates</div>
+            <div class="title">Some Certifications I’ve Got</div>
             <div class="separator" />
         </h3>
     </div>

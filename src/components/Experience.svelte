@@ -23,7 +23,7 @@
     >
         <h3>
             <span class="title-number">01.</span>
-            <div class="title">Experience</div>
+            <div class="title">Where I’ve Worked</div>
             <div class="separator" />
         </h3>
     </div>
