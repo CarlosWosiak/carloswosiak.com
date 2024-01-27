@@ -49,10 +49,10 @@
         </p>
         <p class="contact no-show">
             <a
-                class="email"
-                href="mailto:carlosw403@hotmail.com"
+                class="message no-show"
+                href="https://www.linkedin.com/in/carloswosiak/"
                 rel="noopener noreferrer"
-                target="_blank">E-mail me</a
+                target="_blank">Message me</a
             >
         </p>
     </div>
@@ -131,7 +131,7 @@
         padding-top: 2.5rem;
     }
 
-    .email {
+    .message {
         color: var(--accent);
         background-color: transparent;
         border: 2px solid var(--accent);
@@ -146,7 +146,7 @@
         transition: all 0.3s;
     }
 
-    .email:hover {
+    .message:hover {
         font-size: 1.2rem;
     }
     @media (max-width: 768px) {
