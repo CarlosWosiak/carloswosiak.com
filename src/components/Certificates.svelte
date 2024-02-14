@@ -31,15 +31,17 @@
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
         id="certificate"
     >
-        <div class="row space-between">
+        <div class="row space-around">
             {#each certificates as certificate}
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <img
-                        class="certificate-image select-disable"
-                        draggable="false"
-                        src={certificate.image}
-                        alt={certificate.title}
-                    />
+                    <a href={certificate.authenticator} target="_blank">
+                        <img
+                            class="certificate-image select-disable"
+                            draggable="false"
+                            src={certificate.image}
+                            alt={certificate.title}
+                        />
+                    </a>
                 </div>
             {/each}
         </div>
@@ -96,8 +98,8 @@
         transform: scale(1.1);
     }
 
-    .space-between {
-        justify-content: space-between;
+    .space-around {
+        justify-content: space-around;
     }
 
     @media (max-width: 600px) {

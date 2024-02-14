@@ -2,6 +2,7 @@
     import { degreeList } from "../data/education";
 
     import { onMount } from "svelte";
+    import Description from "./Introduction/Description.svelte";
 
     onMount(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -44,6 +45,11 @@
                     <div class="col-sm-12 col-md-8 col-lg-10">
                         <h3>{degree.title}</h3>
                         <h4>{degree.university}</h4>
+                        {#if degree.description}
+                            <h5>
+                                {degree.description}
+                            </h5>
+                        {/if}
                     </div>
                 </div>
             </div>
