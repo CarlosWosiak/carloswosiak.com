@@ -1,4 +1,5 @@
 <script>
+  import Projects from "./../components/Projects.svelte";
   import Experience from "../components/Experience.svelte";
   import Footer from "../components/Footer.svelte";
   import Navigation from "../components/Navigation.svelte";
@@ -14,7 +15,7 @@
   onMount(() => {
     setTimeout(() => {
       showLoader = false;
-    }, 1200);
+    }, 2200);
   });
 </script>
 

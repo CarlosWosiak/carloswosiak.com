@@ -18,7 +18,7 @@
 </script>
 
 <div
-    class="col-sm-10 col-md-4 col-lg-3 col-sm-offset-1 col-md-offset-0 profile-description overflow-hidden"
+    class="col-sm-10 col-md-4 col-lg-4 col-sm-offset-1 col-md-offset-0 profile-description overflow-hidden"
 >
     <div>
         <p class="no-show">
@@ -92,7 +92,7 @@
     }
 
     .profile-description > div > p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-bottom: 1.5rem;
     }
 
@@ -105,7 +105,7 @@
     }
 
     .show {
-        opacity: 1;
+        opacity: .9;
         filter: blur(0);
         transform: translateX(0);
     }
