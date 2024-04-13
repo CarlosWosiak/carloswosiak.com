@@ -2,8 +2,8 @@
     <div
         class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 show"
     >
+        <h5>Hi, my name is</h5>
         <h1 class="no-show" id="name">
-            <h5>Hi, my name is</h5>
             Carlos Wosiak
             <small>
                 I am a Software Engineer at
