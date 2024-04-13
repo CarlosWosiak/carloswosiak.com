@@ -50,7 +50,8 @@
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        opacity: .9;
         font-weight: 400;
         color: #e7e7e7;
     }
