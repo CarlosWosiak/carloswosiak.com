@@ -132,7 +132,7 @@
     grid-template-columns: repeat(12, 1fr);
     -webkit-box-align: center;
     align-items: center;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
   }
 
   .project-content {

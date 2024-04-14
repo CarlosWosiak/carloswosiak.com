@@ -7,7 +7,7 @@ export const projects = [
         and offer their services to students seeking expert feedback and
         guidance on their scholarly writings`,
     image: "https://portfolio-cw.s3.amazonaws.com/revisor.jpg",
-    stack: ["Figma", "Ruby On Rails", "Vue", "PostgreSQL", "Docker"],
+    stack: ["Figma", "Ruby On Rails", "React", "PostgreSQL", "Docker"],
   },
   {
     title: "Compre do Campo",
@@ -17,6 +17,6 @@ export const projects = [
     directly with local farmers, its aim is to provide fresh and
     high-quality produce while maintaining an attractive price.`,
     image: "https://portfolio-cw.s3.amazonaws.com/cdc.png",
-    stack: ["Ruby On Rails", "React", "PostgreSQL", "Docker"],
+    stack: ["Ruby On Rails", "Angular", "PostgreSQL", "Docker"],
   },
 ];
