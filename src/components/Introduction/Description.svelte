@@ -48,9 +48,9 @@
     <p class="contact no-show">
       <a
         class="message no-show"
-        href="https://www.linkedin.com/in/carloswosiak/"
+        href="https://www.coursera.org/projects/asynchronism-using-net-core-implement-a-banking-system"
         rel="noopener noreferrer"
-        target="_blank">Message me</a
+        target="_blank">Check out my course!</a
       >
     </p>
   </div>
