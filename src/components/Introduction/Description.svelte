@@ -21,15 +21,16 @@
   <div>
     <p class="no-show">
       Hi! I am Carlos, a Software Engineer at <a
-        class="itau show"
-        href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
+        class="iterative show"
+        href="https://iterative.com.br/"
         target="_blank"
-        rel="noreferrer">Itaú Unibanco</a
-      >, the largest banking institution in LATAM. I develop scalable and
-      cost-efficient applications using
+        rel="noreferrer">Iterative;</a
+      >
+      I develop scalable and cost-efficient applications using
       <span class="csharp">C#</span>,
       <span class="dotnet">.NET</span>,
       <span class="AWS">AWS</span>,
+      <span class="azure">Azure</span>,
       <span class="angular">Angular</span>,
       <span class="python">Python</span>, and SQL Server, following the best
       practices for security and performance.
@@ -61,20 +62,23 @@
     overflow-x: hidden;
   }
 
-  .itau {
+  .iterative {
     font-weight: 800;
     color: white;
     transition: 0.3s;
   }
 
-  .itau:hover {
-    color: #f28e46;
+  .iterative:hover {
+    color: #ff991b;
     text-decoration: none;
   }
 
   .csharp,
   .dotnet {
     color: #4d92e3;
+  }
+  .azure {
+    color: #007fff;
   }
 
   .AWS {

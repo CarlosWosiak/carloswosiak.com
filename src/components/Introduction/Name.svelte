@@ -8,10 +8,10 @@
       <small>
         I am a Software Engineer at
         <a
-          class="itau"
-          href="https://migr-itau.mz-sites.com/relacoes-com-investidores/en/results-and-reports/interactive-dashboard/"
+          class="iterative"
+          href="https://iterative.com.br/"
           target="_blank"
-          rel="noreferrer">Itaú Unibanco</a
+          rel="noreferrer">Iterative;</a
         >
       </small>
     </h1>
@@ -38,14 +38,14 @@
     color: rgb(var(--accent));
   }
 
-  .itau {
+  .iterative {
     font-weight: 800;
     color: white;
     transition: 0.3s;
   }
 
-  .itau:hover {
-    color: #f28e46;
+  .iterative:hover {
+    color: #ff991b;
     text-decoration: none;
   }
   .no-show {
