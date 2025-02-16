@@ -6,7 +6,10 @@ export const jobs = [
     company: "Iterative;",
     description: [
       "Consulting for ConectCar, a company in the vehicle toll-tag industry. My work focuses developing robust, scalable solutions using .NET Core, with a strong emphasis on chatbot integration and advanced cloud infrastructure.",
-    ],
+      "Developed a .NET application to manage email and WhatsApp preferences, updating configurations dynamically in SQL Server.",
+      "Implemented a system to process client communication data from channels such as WhatsApp, Facebook, Instagram, and web widgets, defining message routing destinations.",
+      "Resolved flow issues in the chatbot built with Botpress, improving functionality and user experience.",
+      "Designed and implemented scalable .NET Core solutions tailored to ConectCar’s operational needs, integrating chatbot systems with cloud-based infrastructure for enhanced performance and reliability."   ],
     stack: ["C#", "Azure", "BotPress", "Angular", ".NET", "Docker"],
   },
   {
