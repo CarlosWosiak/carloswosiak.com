@@ -27,10 +27,7 @@
             alt="carlos wosiak @ Machu Picchu"
         />
     </div>
-    <h2 class="no-show" id="description">
-        I develop scalable and cost-efficient applications following the best
-        practices for security and performance.
-    </h2>
+
 </div>
 
 <style>

@@ -20,19 +20,14 @@
 >
   <div>
     <p class="no-show">
-      Hi! I am Carlos, a Software Engineer at <a
-        class="iterative show"
-        href="https://iterative.com.br/"
-        target="_blank"
-        rel="noreferrer">Iterative;</a
-      >
+      Hi! I am Carlos, a Software Engineer.
       I develop scalable and cost-efficient applications using
-      <span class="csharp">C#</span>,
+      <span class="csharp show">C#</span>,
       <span class="dotnet">.NET</span>,
       <span class="AWS">AWS</span>,
       <span class="azure">Azure</span>,
       <span class="angular">Angular</span>,
-      <span class="python">Python</span>, and SQL Server, following the best
+      <span class="nodejs">Node.js</span>, and SQL Server, following the best
       practices for security and performance.
     </p>
     <p class="no-show">
@@ -62,17 +57,6 @@
     overflow-x: hidden;
   }
 
-  .iterative {
-    font-weight: 800;
-    color: white;
-    transition: 0.3s;
-  }
-
-  .iterative:hover {
-    color: #ff991b;
-    text-decoration: none;
-  }
-
   .csharp,
   .dotnet {
     color: #4d92e3;
@@ -89,8 +73,8 @@
     color: #d64144;
   }
 
-  .python {
-    color: #f28e46;
+  .nodejs {
+    color: #76ae64;
   }
 
   .profile-description > div > p {

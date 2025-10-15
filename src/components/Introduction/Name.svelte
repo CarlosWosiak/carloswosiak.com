@@ -5,15 +5,6 @@
     <h5>Hi, my name is</h5>
     <h1 class="no-show" id="name">
       Carlos Wosiak
-      <small>
-        I am a Software Engineer at
-        <a
-          class="iterative"
-          href="https://iterative.com.br/"
-          target="_blank"
-          rel="noreferrer">Iterative;</a
-        >
-      </small>
     </h1>
   </div>
 </div>
@@ -37,17 +28,7 @@
   h5 {
     color: rgb(var(--accent));
   }
-
-  .iterative {
-    font-weight: 800;
-    color: white;
-    transition: 0.3s;
-  }
-
-  .iterative:hover {
-    color: #ff991b;
-    text-decoration: none;
-  }
+  
   .no-show {
     opacity: 0;
     filter: blur(5px);

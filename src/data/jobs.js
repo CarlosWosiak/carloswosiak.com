@@ -1,15 +1,30 @@
 export const jobs = [
   {
-    startDate: "2024",
-    endDate: "Present",
+    startDate: "2025",
+    endDate: "present",
     jobTitle: "Senior Software Engineer",
-    company: "Iterative;",
+    company: "Sunshift / CAA AMA - Alberta Motor Association",
     description: [
-      "Consulting for ConectCar, a company in the vehicle toll-tag industry. My work focuses developing robust, scalable solutions using .NET Core, with a strong emphasis on chatbot integration and advanced cloud infrastructure.",
+      "Consulting for CAA AMA - Alberta Motor Association.",
+      "Working on membership modernization initiatives, developing serverless systems primarily using Node.js Lambdas orchestrated with AWS Step Functions.",
+      "Building and maintaining data processing solutions, including file-based workflows and internal transaction systems between memberships.",
+      "Developing and enhancing an email delivery service designed for event-driven architectures, enabling integration and use across multiple teams.",
+      "Contributing to scalable, cloud-native architectures that align with modernization and automation goals within the organization.",
+    ],
+    stack: ["NodeJs", "AWS", "Angular", "Docker"],
+  },
+  {
+    startDate: "2024",
+    endDate: "2025",
+    jobTitle: "Senior Software Engineer",
+    company: "ConectCar",
+    description: [
+      "Company in the vehicle toll-tag industry. Focus on developing robust, scalable solutions using .NET Core, with a strong emphasis on chatbot integration and advanced cloud infrastructure.",
       "Developed a .NET application to manage email and WhatsApp preferences, updating configurations dynamically in SQL Server.",
       "Implemented a system to process client communication data from channels such as WhatsApp, Facebook, Instagram, and web widgets, defining message routing destinations.",
       "Resolved flow issues in the chatbot built with Botpress, improving functionality and user experience.",
-      "Designed and implemented scalable .NET Core solutions tailored to ConectCar’s operational needs, integrating chatbot systems with cloud-based infrastructure for enhanced performance and reliability."   ],
+      "Designed and implemented scalable .NET Core solutions tailored to ConectCar’s operational needs, integrating chatbot systems with cloud-based infrastructure for enhanced performance and reliability.",
+    ],
     stack: ["C#", "Azure", "BotPress", "Angular", ".NET", "Docker"],
   },
   {
