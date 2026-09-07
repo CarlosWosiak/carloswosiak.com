@@ -9,9 +9,17 @@ export const jobs = [
       "Working on membership modernization initiatives, developing serverless systems primarily using Node.js Lambdas orchestrated with AWS Step Functions.",
       "Building and maintaining data processing solutions, including file-based workflows and internal transaction systems between memberships.",
       "Developing and enhancing an email delivery service designed for event-driven architectures, enabling integration and use across multiple teams.",
+      "Building the backend for frontend (BFF) behind the CAA mobile app, which serves over 100,000 users.",
+      "Creating operational dashboards with Azure Workbooks.",
       "Contributing to scalable, cloud-native architectures that align with modernization and automation goals within the organization.",
     ],
-    stack: ["Node.js", "AWS", "Angular", "Docker"],
+    links: [
+      {
+        label: "CAA Mobile on the App Store",
+        href: "https://apps.apple.com/ca/app/caa-mobile/id1511207013",
+      },
+    ],
+    stack: ["Node.js", "AWS", "Azure", "Angular", "Docker"],
   },
   {
     startDate: "2024",

@@ -20,6 +20,15 @@
 					<li>{point}</li>
 				{/each}
 			</ul>
+			{#if job.links}
+				<ul class="job-links">
+					{#each job.links as link (link.href)}
+						<li>
+							<a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+						</li>
+					{/each}
+				</ul>
+			{/if}
 			<ul class="stack">
 				{#each job.stack as tech (tech)}
 					<li class="badge">{tech}</li>
@@ -81,6 +90,28 @@
 		position: absolute;
 		left: 0;
 		color: white;
+	}
+
+	.job-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.25rem;
+		list-style: none;
+		padding: 0;
+		margin: 0.75rem 0 0;
+	}
+
+	.job-links a {
+		color: rgb(var(--accent));
+		font-size: 0.9rem;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(var(--accent), 0.35);
+		transition: border-color 0.2s;
+	}
+
+	.job-links a:hover,
+	.job-links a:focus-visible {
+		border-bottom-color: rgb(var(--accent));
 	}
 
 	.stack {
