@@ -20,7 +20,7 @@
 	.cover {
 		inset: 0;
 		overflow: hidden;
-		background: linear-gradient(45deg, #081218, #050f41, #0b1245);
+		background: linear-gradient(45deg, var(--bg-1), var(--bg-2), var(--bg-3));
 		background-size: 200% 200%;
 		display: grid;
 		place-items: center;
