@@ -2,80 +2,59 @@
 <html lang="en">
 
 <head>
-	<title>Carlos Wosiak - Software Engineer</title>
-	<meta name="title" content="Carlos Wosiak - Software Engineer" />
-	<meta name="description"
-		content="Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using C#, .NET, AWS, Azure, angular, NodeJs, and SQL Server, following the best practices for security and performance." />
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:site_name" content="Carlos Wosiak - Software Engineer">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Carlos Wosiak - Software Engineer</title>
+	<meta name="description"
+		content="Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using C#, .NET, AWS, Azure, Angular, Node.js, and SQL Server, following the best practices for security and performance." />
+	<meta name="author" content="Carlos Wosiak" />
+	<link rel="canonical" href="https://carloswosiak.com/" />
+	<meta name="theme-color" content="#081218" />
+	<meta name="color-scheme" content="dark" />
+
+	<meta property="og:site_name" content="Carlos Wosiak - Software Engineer" />
 	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://carloswosiak.com/" />
 	<meta property="og:title" content="Carlos Wosiak - Software Engineer" />
 	<meta property="og:description"
-		content="Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using C#, .NET, AWS, Azure, angular, NodeJs, and SQL Server, following the best practices for security and performance." />
+		content="Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using C#, .NET, AWS, Azure, Angular, Node.js, and SQL Server, following the best practices for security and performance." />
+	<meta property="og:image" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg" />
 	<meta property="og:image:secure_url" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg" />
-	<meta name="image" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg">
+	<meta property="og:image:alt" content="Carlos Wosiak" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Carlos Wosiak - Software Engineer" />
+	<meta name="twitter:description"
+		content="Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using C#, .NET, AWS, Azure, Angular, Node.js, and SQL Server, following the best practices for security and performance." />
+	<meta name="twitter:image" content="https://portfolio-cw.s3.amazonaws.com/profile.jpg" />
+
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+	<link rel="preconnect" href="https://rsms.me" crossorigin />
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Carlos Wosiak",
+			"url": "https://carloswosiak.com/",
+			"image": "https://portfolio-cw.s3.amazonaws.com/profile.jpg",
+			"jobTitle": "Senior Software Engineer",
+			"sameAs": [
+				"https://github.com/carloswosiak",
+				"https://www.linkedin.com/in/carloswosiak/",
+				"https://instagram.com/carloswosiak"
+			]
+		}
+	</script>
+
 	%sveltekit.head%
 </head>
 
 <body data-sveltekit-preload-data="hover">
 	<div style="display: contents">%sveltekit.body%</div>
 </body>
-<style>
-	:root {
-		--accent: 66, 255, 252;
-	}
-
-	* {
-		font-family: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-		-webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-	}
-
-	body {
-		background-color: #0F202A;
-		color: #CFCFCF;
-	}
-
-	body {
-		background: linear-gradient(45deg, #081218, #050f41, #0b1245);
-		background-size: 200% 200%;
-		animation: gradient 15s ease infinite;
-	}
-
-	::selection {
-		color: rgb(95, 97, 224);
-		background: rgba(20, 19, 104, 0.2);
-	}
-
-	@keyframes gradient {
-		0% {
-			background-position: 0% 50%;
-		}
-
-		50% {
-			background-position: 100% 50%;
-		}
-
-		100% {
-			background-position: 0% 50%;
-		}
-	}
-
-	:root {
-		font-family: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;;
-	}
-
-	@supports (font-variation-settings: normal) {
-		:root {
-			font-family: 'Inter var', sans-serif;
-		}
-	}
-</style>
 
 </html>

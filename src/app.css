@@ -1,0 +1,171 @@
+@import 'mini.css/dist/mini-default.min.css';
+
+:root {
+	--accent: 66, 255, 252;
+	--surface: #111e43;
+	--muted: #a8b2d1;
+	--font-sans: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+
+	font-family: var(--font-sans);
+	color-scheme: dark;
+}
+
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: 'Inter var', var(--font-sans);
+	}
+}
+
+* {
+	font-family: inherit;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: #cfcfcf;
+	background: linear-gradient(45deg, #081218, #050f41, #0b1245);
+	background-color: #081218;
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	color: rgb(95, 97, 224);
+	background: rgba(20, 19, 104, 0.2);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*
+ * One content column for the whole page.
+ *
+ * This replaces a per-section stack of mini.css offset classes that didn't
+ * agree with each other: the hero spanned seven of twelve columns while every
+ * other section spanned six, and only the sections carried `.container`, so
+ * everything below the hero also sat 12px further right.
+ *
+ * The left margin clears the fixed navigation rail; once the rail is hidden
+ * the column simply centres.
+ */
+.section-inner {
+	box-sizing: border-box;
+	max-width: 52rem;
+	/* Centred, unless centring would put the column under the navigation rail.
+	   Width stays `auto` so a wide column shrinks to fit rather than
+	   overflowing once the nav clearance wins. */
+	margin-left: max(11rem, calc((100% - 52rem) / 2));
+	margin-right: auto;
+	padding-inline: 1.5rem;
+}
+
+/* The column sets alignment; this keeps long-form text at a readable measure. */
+.measure {
+	max-width: 42rem;
+}
+
+@media (max-width: 968px) {
+	.section-inner {
+		margin-left: auto;
+	}
+}
+
+/*
+ * mini.css gives headings, paragraphs and lists their own horizontal margins,
+ * which land text on four different left edges inside one column. The column
+ * owns the horizontal position; block elements only own vertical rhythm.
+ */
+.section-inner :is(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*
+ * mini.css themes <nav> and <footer> as light-mode UI components (grey panel,
+ * border, link colours). This site uses them purely as landmarks, so strip the
+ * component styling back to neutral and let the components style themselves.
+ */
+nav,
+footer {
+	background: none;
+	color: inherit;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+}
+
+nav * {
+	padding: 0;
+}
+
+nav a,
+nav a:visited,
+nav a:hover,
+nav a:focus,
+footer a,
+footer a:visited,
+footer a:hover,
+footer a:focus {
+	background: none;
+	color: inherit;
+}
+
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 200;
+	padding: 0.75rem 1.25rem;
+	background: var(--surface);
+	color: rgb(var(--accent));
+	border-radius: 0 0 0.3rem 0;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	left: 0;
+}
+
+/* mini.css strips focus rings on some elements; put a visible one back. */
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid rgb(var(--accent));
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	body {
+		animation: none;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

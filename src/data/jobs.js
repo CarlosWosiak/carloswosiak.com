@@ -11,7 +11,7 @@ export const jobs = [
       "Developing and enhancing an email delivery service designed for event-driven architectures, enabling integration and use across multiple teams.",
       "Contributing to scalable, cloud-native architectures that align with modernization and automation goals within the organization.",
     ],
-    stack: ["NodeJs", "AWS", "Angular", "Docker"],
+    stack: ["Node.js", "AWS", "Angular", "Docker"],
   },
   {
     startDate: "2024",
@@ -33,8 +33,8 @@ export const jobs = [
     jobTitle: "Software Engineer",
     company: "Itaú Unibanco",
     description: [
-      "Develop highly scalable AWS Lambda functions using Python and .NET, efficiently processing millions of trading operations daily, resulting in a significant increase of productivity and cost saving for the organization,",
-      "Play a key role in the successful migration of  the company’s infrastructure to the AWS cloud.",
+      "Develop highly scalable AWS Lambda functions using Python and .NET, efficiently processing millions of trading operations daily, resulting in a significant increase in productivity and cost savings for the organization.",
+      "Play a key role in the successful migration of the company’s infrastructure to the AWS cloud.",
       "Build and ship systems using mostly AWS services, such as DynamoDB, RDS, Lambdas, Step Functions, CloudWatch, S3, SNS, SQS and EC2 instances.",
       "Recognized as a top talent within the organization, receiving 100% monthly salary bonus as a recognition for the results presented.",
       "Deliver high-quality, robust production code for a diverse array of projects, including trading sessions with Bloomberg, CitiBank, JPMorgan and Credit Suisse.",
@@ -49,12 +49,12 @@ export const jobs = [
     jobTitle: "Software Engineer",
     company: "Kolina Labs",
     description: [
-      "Developed dockerized applications in NodeJS, Laravel, Vue, Python and Svelte.",
+      "Developed dockerized applications in Node.js, Laravel, Vue, Python and Svelte.",
       "Maintained a reliable platform with millions of dollars transacted monthly.",
       "Gave training courses and shared knowledge with the team, increasing the tech stack used across our projects.",
       "Collaborated with other engineers to create a very complex system to calculate required equipment in the photovoltaic industry.",
     ],
-    stack: ["Vue", "NodeJs", "Quasar", "Angular", "PHP", "Laravel"],
+    stack: ["Vue", "Node.js", "Quasar", "Angular", "PHP", "Laravel"],
   },
   {
     startDate: "2020",
@@ -64,7 +64,7 @@ export const jobs = [
       "Built and shipped a platform to subscribe to a monthly healthy food basket delivery service, using Angular, Ruby on Rails, PostgreSQL, and stripe for payment on a Digital Ocean infrastructure.",
       "Architected and implemented a system to register and hire academic text reviewers, using React, Ruby on Rails and PostgreSQL",
       "Created a React Component to process X-Ray for a clinical diagnostics company.",
-      "Improved a item select page for a food delivery company.",
+      "Improved an item selection page for a food delivery company.",
     ],
     stack: ["Ruby on Rails", "React", "Angular", "PostgreSQL"],
   },

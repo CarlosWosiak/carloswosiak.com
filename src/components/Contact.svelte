@@ -1,97 +1,73 @@
 <script>
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    const hiddenElements = document.querySelectorAll(".no-show");
-    hiddenElements.forEach((hiddenElement) => observer.observe(hiddenElement));
-  });
+	import { reveal } from '$lib/actions/reveal.js';
 </script>
 
-<div class="row contact-container" id="contact">
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-lg-offset-3 col-md-offset-2 show"
-  >
-    <h1 class="no-show">Get In Touch</h1>
-    <div class="sub-text no-show">
-      <h2>
-        Do you have any interesting project and want someone to help you with?
-        my inbox is always open!
-      </h2>
-    </div>
-    <a
-      class="message no-show"
-      href="https://www.linkedin.com/in/carloswosiak/"
-      rel="noopener noreferrer"
-      target="_blank">Message me</a
-    >
-  </div>
-</div>
+<section class="section-inner contact-container" aria-labelledby="contact">
+	<div class="contact-inner">
+		<h2 id="contact" use:reveal>Get In Touch</h2>
+		<p class="sub-text" use:reveal={{ delay: 100 }}>
+			Do you have an interesting project and want someone to help you with it? My inbox is always
+			open!
+		</p>
+		<a
+			class="message"
+			href="https://www.linkedin.com/in/carloswosiak/"
+			rel="noopener noreferrer"
+			target="_blank"
+			use:reveal={{ delay: 200 }}>Message me</a
+		>
+	</div>
+</section>
 
 <style>
-  .contact-container {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
+	.contact-container {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
 
-  .contact-container > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+	.contact-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    text-align: center;
-  }
+	h2 {
+		font-size: 3.5rem;
+		font-weight: 800;
+		text-align: center;
+		color: white;
+	}
 
-  .sub-text {
-    align-self: center;
-    max-width: 30rem;
-  }
+	.sub-text {
+		align-self: center;
+		max-width: 30rem;
+		font-size: 1.2rem;
+		text-align: center;
+	}
 
-  h2 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
+	.message {
+		color: rgb(var(--accent));
+		background-color: transparent;
+		border: 2px solid rgb(var(--accent));
+		border-radius: 0.3rem;
+		padding: 1.25rem 1.75rem;
+		font-size: 1rem;
+		line-height: 1;
+		text-decoration: none;
+		font-weight: 500;
+		margin-top: 1rem;
+		transition: transform 0.3s, background-color 0.3s;
+	}
 
-  .message {
-    color: rgb(var(--accent));
-    background-color: transparent;
-    border: 2px solid rgb(var(--accent));
-    border-radius: 0.3rem;
-    font-weight: 700;
-    padding: 1.25rem 1.75rem;
-    font-size: 1rem;
-    line-height: 1;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 1rem;
-    transition: all 0.3s;
-  }
+	.message:hover,
+	.message:focus-visible {
+		transform: scale(1.05);
+		background-color: rgba(var(--accent), 0.08);
+	}
 
-  .message:hover {
-    font-size: 1.2rem;
-  }
-
-  .no-show {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(30px);
-    transition: all 0.3s;
-  }
-
-  .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
+	@media (max-width: 600px) {
+		h2 {
+			font-size: 2.5rem;
+		}
+	}
 </style>

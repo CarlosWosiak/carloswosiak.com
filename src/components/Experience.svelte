@@ -1,162 +1,107 @@
 <script>
-  import { jobs } from "../data/jobs";
-
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    });
-
-    document
-      .querySelectorAll(".animate")
-      .forEach((hiddenElement) => observer.observe(hiddenElement));
-  });
+	import { reveal } from '$lib/actions/reveal.js';
+	import SectionHeading from './SectionHeading.svelte';
+	import { jobs } from '../data/jobs.js';
 </script>
 
-<div class="row container show">
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-    id="experience"
-  >
-    <h3>
-      <span class="title-number">01.</span>
-      <div class="title">Where I’ve Worked</div>
-      <div class="separator" />
-    </h3>
-  </div>
-  {#each jobs as job}
-    <div
-      class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-      id="experience"
-    >
-      <div class="job-entry">
-        <div class="row">
-          <div class="job-period">
-            {job.startDate} - {job.endDate}
-          </div>
-          <h3>
-            <span class="entry">
-              {job.jobTitle}
-              <span class="company">
-                {job.company ? ` @ ${job.company}` : ""}
-              </span>
-            </span>
-          </h3>
-        </div>
-        <div class="row">
-          <ul>
-            {#each job.description as point}
-              <li>{point}</li>
-            {/each}
-          </ul>
-        </div>
-        <div class="row">
-          {#each job.stack as tech}
-            <div class="badge">{tech}</div>
-          {/each}
-        </div>
-      </div>
-    </div>
-  {/each}
-</div>
+<section class="section-inner" aria-labelledby="experience">
+	<SectionHeading id="experience" number="01." title="Where I’ve Worked" />
+
+	{#each jobs as job (job.jobTitle + job.startDate)}
+		<article class="job-entry" use:reveal>
+			<div class="job-header">
+				<p class="job-period">{job.startDate} - {job.endDate}</p>
+				<h3>
+					{job.jobTitle}{#if job.company}<span class="company">&nbsp;@ {job.company}</span>{/if}
+				</h3>
+			</div>
+			<ul class="job-description measure">
+				{#each job.description as point (point)}
+					<li>{point}</li>
+				{/each}
+			</ul>
+			<ul class="stack">
+				{#each job.stack as tech (tech)}
+					<li class="badge">{tech}</li>
+				{/each}
+			</ul>
+		</article>
+	{/each}
+</section>
 
 <style>
-  ul li::before {
-    content: "▹";
-    position: absolute;
-    left: 0px;
-    color: white;
-  }
+	.job-entry {
+		margin-bottom: 3rem;
+		padding: 1rem;
+		margin-inline: -1rem;
+		border-radius: 1rem;
+		transition: background-color 0.3s;
+	}
 
-  li {
-    margin-bottom: 0.5rem;
-  }
+	.job-entry:hover {
+		background-color: rgba(255, 255, 255, 0.096);
+	}
 
-  ul {
-    list-style: none;
-  }
+	.job-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0 2rem;
+	}
 
-  h3 {
-    display: flex;
-  }
+	.job-period {
+		margin: 0;
+		white-space: nowrap;
+	}
 
-  .title-number {
-    color: rgb(var(--accent));
-    margin-right: 0.6rem;
-  }
+	h3 {
+		margin: 0;
+		display: inline;
+	}
 
-  .title {
-    font-weight: 600;
-    color: white;
-    font-size: 1.5rem;
-  }
+	.company {
+		font-weight: 600;
+		color: white;
+	}
 
-  .separator {
-    bottom: 0;
-    left: 2.5rem;
-    width: 40%;
-    height: 0.1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.103);
-    margin-left: 1rem;
-    align-self: center;
-    transition: all 0.2s;
-    transition-delay: 2.3s;
-  }
-  .job-period {
-    align-self: center;
-    margin-right: 2rem;
-  }
+	.job-description {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 0;
+	}
 
-  .job-entry {
-    margin-bottom: 3rem;
-    transition: 0.3s;
-  }
+	.job-description li {
+		position: relative;
+		padding-left: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
 
-  .job-entry:hover {
-    background-color: rgba(255, 255, 255, 0.096);
-    border-radius: 1rem;
-  }
+	.job-description li::before {
+		content: '▹';
+		position: absolute;
+		left: 0;
+		color: white;
+	}
 
-  .badge {
-    background: #939ad13d;
-    color: #a1b3f5;
-    padding: 0.4rem 1rem;
-    border-radius: 1rem;
-    margin: 0.5rem 0.5rem;
-    transition: 0.3s;
-  }
+	.stack {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 0;
+	}
 
-  .badge:hover {
-    background: #15171f3d;
-  }
+	.badge {
+		background: #939ad13d;
+		color: #a1b3f5;
+		padding: 0.4rem 1rem;
+		border-radius: 1rem;
+		margin: 0.5rem 0.5rem 0 0;
+		font-size: 0.9rem;
+		transition: background-color 0.3s;
+	}
 
-  .animate {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(50%);
-    transition: all 0.3s;
-    transition-delay: 0.1s;
-  }
-
-  .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
-
-  .company {
-    font-weight: 600;
-    color: white;
-  }
-  @media (max-width: 600px) {
-    .animate {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateX(0);
-    }
-  }
+	.badge:hover {
+		background: #15171f3d;
+	}
 </style>

@@ -1,112 +1,69 @@
 <script>
-  import { certificates } from "../data/certificates";
-
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    });
-
-    document
-      .querySelectorAll(".animate")
-      .forEach((hiddenElement) => observer.observe(hiddenElement));
-  });
+	import { reveal } from '$lib/actions/reveal.js';
+	import SectionHeading from './SectionHeading.svelte';
+	import { certificates } from '../data/certificates.js';
 </script>
 
-<div class="row container show">
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-    id="certificate"
-  >
-    <h3>
-      <span class="title-number">02.</span>
-      <div class="title">Some Certifications I’ve Got</div>
-      <div class="separator" />
-    </h3>
-  </div>
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-    id="certificate"
-  >
-    <div class="row space-around">
-      {#each certificates as certificate}
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href={certificate.authenticator} target="_blank">
-            <img
-              class="certificate-image select-disable"
-              draggable="false"
-              src={certificate.image}
-              alt={certificate.title}
-            />
-          </a>
-        </div>
-      {/each}
-    </div>
-  </div>
-</div>
+<section class="section-inner" aria-labelledby="certificates">
+	<SectionHeading id="certificates" number="02." title="Some Certifications I’ve Got" />
+
+	<ul class="certificate-list" use:reveal>
+		{#each certificates as certificate (certificate.title)}
+			<li>
+				<a href={certificate.authenticator} target="_blank" rel="noopener noreferrer">
+					<img
+						class="certificate-image"
+						draggable="false"
+						src={certificate.image}
+						alt="{certificate.title} badge"
+						width="340"
+						height="340"
+						loading="lazy"
+						decoding="async"
+					/>
+					<span class="certificate-title">{certificate.title}</span>
+				</a>
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <style>
-  h3 {
-    display: flex;
-  }
+	.certificate-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
 
-  .title-number {
-    color: rgb(var(--accent));
-    margin-right: 0.6rem;
-  }
+	.certificate-list a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		width: 10rem;
+		text-decoration: none;
+		color: inherit;
+	}
 
-  .title {
-    font-weight: 600;
-    color: white;
-    font-size: 1.5rem;
-  }
+	.certificate-image {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		user-select: none;
+		transition: transform 0.3s;
+	}
 
-  .separator {
-    bottom: 0;
-    left: 2.5rem;
-    width: 40%;
-    height: 0.1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.103);
-    margin-left: 1rem;
-    align-self: center;
-    transition: all 0.2s;
-    transition-delay: 2.3s;
-  }
-  .animate {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(50%);
-    transition: all 0.3s;
-    transition-delay: 0.1s;
-  }
+	.certificate-list a:hover .certificate-image,
+	.certificate-list a:focus-visible .certificate-image {
+		transform: scale(1.05);
+	}
 
-  .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
-
-  .certificate-image {
-    transition: transform 0.2s;
-  }
-
-  .certificate-image:hover {
-    transform: scale(1.1);
-  }
-
-  .space-around {
-    justify-content: space-around;
-  }
-
-  @media (max-width: 600px) {
-    .animate {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateX(0);
-    }
-  }
+	.certificate-title {
+		font-size: 0.85rem;
+		text-align: center;
+	}
 </style>

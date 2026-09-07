@@ -1,236 +1,142 @@
 <script>
-  import { onMount } from "svelte";
-  import { projects } from "../data/projects";
-
-  onMount(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    });
-
-    document
-      .querySelectorAll(".animate")
-      .forEach((hiddenElement) => observer.observe(hiddenElement));
-  });
+	import { reveal } from '$lib/actions/reveal.js';
+	import SectionHeading from './SectionHeading.svelte';
+	import { projects } from '../data/projects.js';
 </script>
 
-<div class="row container show">
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-    id="projects"
-  >
-    <h3>
-      <span class="title-number">03.</span>
-      <div class="title">Some Projects I’ve delivered</div>
-      <div class="separator" />
-    </h3>
-  </div>
+<section class="section-inner" aria-labelledby="projects">
+	<SectionHeading id="projects" number="03." title="Some Projects I’ve Delivered" />
 
-  <div
-    class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 animate"
-    id="certificate"
-  >
-    {#each projects as project}
-      <div class="project-grid">
-        <div class="project-image select-disable">
-          <img
-            src={project.image}
-            alt={project.title}
-            class="select-disable"
-            draggable="false"
-          />
-        </div>
-        <div class="project-content">
-          <h2 class="project-overline">Featured Projects</h2>
-          <h1 class="project-title">{project.title}</h1>
-          <div class="description">
-            {project.description}
-          </div>
-
-          <ul class="tech-used">
-            {#each project.stack as tech}
-              <li>{tech}</li>
-            {/each}
-          </ul>
-        </div>
-      </div>
-    {/each}
-  </div>
-</div>
+	{#each projects as project (project.title)}
+		<article class="project-grid" use:reveal>
+			<div class="project-image">
+				<img
+					src={project.image}
+					alt="Screenshot of {project.title}"
+					draggable="false"
+					width={project.imageWidth}
+					height={project.imageHeight}
+					loading="lazy"
+					decoding="async"
+				/>
+			</div>
+			<div class="project-content">
+				<p class="project-overline">Featured Project</p>
+				<h3 class="project-title">{project.title}</h3>
+				<p class="description">{project.description}</p>
+				<ul class="tech-used">
+					{#each project.stack as tech (tech)}
+						<li>{tech}</li>
+					{/each}
+				</ul>
+			</div>
+		</article>
+	{/each}
+</section>
 
 <style>
-  h3 {
-    display: flex;
-  }
+	.project-overline {
+		margin: 10px 0;
+		color: rgb(var(--accent));
+		font-size: 0.9rem;
+	}
 
-  .title-number {
-    color: rgb(var(--accent));
-    margin-right: 0.6rem;
-  }
+	.project-title {
+		margin: 0 0 20px;
+		font-size: clamp(24px, 5vw, 28px);
+		font-weight: 700;
+	}
 
-  .title {
-    font-weight: 600;
-    color: white;
-    font-size: 1.5rem;
-  }
+	.description {
+		position: relative;
+		z-index: 2;
+		padding: 25px;
+		border-radius: 0.3rem;
+		background-color: var(--surface);
+		color: var(--muted);
+		font-size: 1rem;
+	}
 
-  .project-overline {
-    margin: 10px 0px;
-    color: rgb(var(--accent));
-    font-size: 0.9rem;
-    font-weight: 700;
-    font-weight: 400;
-  }
+	.project-grid {
+		position: relative;
+		display: grid;
+		gap: 10px;
+		grid-template-columns: repeat(12, 1fr);
+		align-items: center;
+		margin-bottom: 3rem;
+	}
 
-  .project-title {
-    margin: 0px 0px 20px;
-    font-size: clamp(24px, 5vw, 28px);
-    font-weight: 700;
-  }
+	.project-content {
+		position: relative;
+		grid-area: 1 / 1 / -1 / 7;
+	}
 
-  .separator {
-    bottom: 0;
-    left: 2.5rem;
-    width: 40%;
-    height: 0.1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.103);
-    margin-left: 1rem;
-    align-self: center;
-    transition: all 0.2s;
-    transition-delay: 2.3s;
-  }
-  .animate {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(50%);
-    transition: all 0.3s;
-    transition-delay: 0.1s;
-  }
+	.project-image {
+		grid-area: 1 / 6 / -1 / -1;
+		position: relative;
+		z-index: 1;
+	}
 
-  .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
+	.project-image img {
+		width: 100%;
+		height: auto;
+		border-radius: 0.3rem;
+		user-select: none;
+		opacity: 0.7;
+		transition: opacity 0.3s;
+	}
 
-  .description {
-    position: relative;
-    z-index: 2;
-    padding: 25px;
-    border-radius: 0.3rem;
-    background-color: #111e43;
-    color: #a8b2d1;
-    font-size: 1rem;
-  }
+	.project-image img:hover {
+		opacity: 1;
+	}
 
-  .project-grid {
-    position: relative;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(12, 1fr);
-    -webkit-box-align: center;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+	.tech-used {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		z-index: 2;
+		margin: 25px 0 10px;
+		padding: 0;
+		list-style: none;
+	}
 
-  .project-content {
-    grid-column: 1 / 9;
-  }
+	.tech-used li {
+		margin: 0 20px 5px 0;
+		white-space: nowrap;
+		font-size: 0.8rem;
+	}
 
-  .project-content {
-    position: relative;
-    grid-area: 1 / 1 / -1 / 7;
-  }
+	.project-grid:nth-of-type(2n + 2) .project-image {
+		grid-column: 1 / 8;
+	}
 
-  .project-image {
-    grid-area: 1 / 6 / -1 / -1;
-    position: relative;
-    z-index: 1;
-  }
+	.project-grid:nth-of-type(2n + 2) .project-content {
+		grid-column: 7 / -1;
+		text-align: right;
+	}
 
-  .project-image img {
-    opacity: 0.7;
-  }
-  .project-image img:active {
-    pointer-events: none;
-  }
+	.project-grid:nth-of-type(2n + 2) .tech-used {
+		justify-content: flex-end;
+	}
 
-  .project-image img:hover {
-    opacity: 1;
-    transition: 0.3s;
-  }
+	@media (max-width: 750px) {
+		.project-grid {
+			margin-bottom: 2rem;
+		}
 
-  .project-image img::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    inset: 0px;
-    z-index: 3;
-    transition: var(--transition);
-    background-color: rgb(--accent);
-    mix-blend-mode: screen;
-  }
+		.project-image {
+			display: none;
+		}
 
-  .tech-used {
-    -webkit-box-pack: end;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-    margin: 25px 0px 10px;
-    padding: 0px;
-    list-style: none;
-  }
+		.project-content,
+		.project-grid:nth-of-type(2n + 2) .project-content {
+			grid-column: 1 / -1;
+			grid-area: auto;
+			text-align: left;
+		}
 
-  .tech-used li {
-    margin: 0px 20px 5px 0px;
-    white-space: nowrap;
-    font-size: 0.8rem;
-  }
-
-  .select-disable {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  }
-
-  .project-grid:nth-of-type(2n + 2) .project-image {
-    grid-column: 1 / 8;
-  }
-
-  .project-grid:nth-of-type(2n + 2) .project-content {
-    grid-column: 7 / -1;
-    text-align: right;
-  }
-  .project-grid:nth-of-type(2n + 2) .project-content ul {
-    justify-content: flex-end;
-  }
-
-  @media (max-width: 750px) {
-    .animate {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateX(0);
-    }
-
-    img {
-      display: none;
-    }
-
-    .project-grid {
-      margin-bottom: 0;
-    }
-
-    .project-content,
-    .project-grid:nth-of-type(2n + 2) .project-content {
-      grid-column: 1 / -1;
-      padding: 40px 40px 30px;
-      text-align: left;
-    }
-  }
+		.project-grid:nth-of-type(2n + 2) .tech-used {
+			justify-content: flex-start;
+		}
+	}
 </style>
