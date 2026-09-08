@@ -2,28 +2,18 @@
 	import { reveal } from '$lib/actions/reveal.js';
 </script>
 
-<div class="profile-description">
+<div class="background">
 	<p use:reveal={{ from: 'right', delay: 500 }}>
-		Hi! I am Carlos, a Software Engineer. I develop scalable and cost-efficient applications using
-		<span class="csharp">C#</span>,
-		<span class="dotnet">.NET</span>,
-		<span class="aws">AWS</span>,
-		<span class="azure">Azure</span>,
-		<span class="angular">Angular</span>,
-		<span class="nodejs">Node.js</span>, and SQL Server, following the best practices for security
-		and performance.
-	</p>
-	<p use:reveal={{ from: 'right', delay: 650 }}>
 		I have a bachelor's degree in Software Engineering,
 		<span class="aws">AWS certifications</span>, domain expertise in the FIX Protocol and financial
 		trading exchanges. I am passionate about learning new technologies and sharing knowledge with
 		others.
 	</p>
-	<p use:reveal={{ from: 'right', delay: 800 }}>
+	<p use:reveal={{ from: 'right', delay: 650 }}>
 		I have given training courses and presented at conferences on various topics related to software
 		development.
 	</p>
-	<p class="contact" use:reveal={{ from: 'right', delay: 950 }}>
+	<p class="cta" use:reveal={{ from: 'right', delay: 800 }}>
 		<a
 			class="message"
 			href="https://www.coursera.org/projects/asynchronism-using-net-core-implement-a-banking-system"
@@ -34,40 +24,34 @@
 </div>
 
 <style>
-	.profile-description {
+	.background {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		overflow-x: hidden;
 	}
 
 	/* No `opacity` here: the reveal action animates opacity on these very
 	   elements, and a scoped rule would outrank the global `.reveal` state. */
-	.profile-description p {
+	.background p {
 		font-size: 1.1rem;
-		margin-bottom: 1.5rem;
+		margin: 0 0 1.5rem;
 	}
 
-	.csharp,
-	.dotnet {
-		color: #4d92e3;
+	.background p:last-child {
+		margin-bottom: 0;
 	}
 
-	.azure {
-		color: #007fff;
-	}
-
-	.aws {
-		color: #f28e46;
-	}
-
-	.angular {
-		color: #d64144;
-	}
-
-	.nodejs {
-		color: #76ae64;
-	}
-
-	.contact {
-		margin-top: 0.5rem;
+	/* Centred on its own line rather than following the text's left edge, and
+	   centred in whatever height is left over once the text above it has been
+	   laid out — which is the photo column's overhang on a wide screen, and
+	   nothing at all once the columns collapse. */
+	.cta {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 	}
 
 	.message {
@@ -81,7 +65,6 @@
 		line-height: 1;
 		text-decoration: none;
 		font-weight: 500;
-		margin-top: 1rem;
 		transition: transform 0.3s, background-color 0.3s;
 	}
 

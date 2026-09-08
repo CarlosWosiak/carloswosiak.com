@@ -157,6 +157,29 @@ button:focus-visible {
 	border-radius: 2px;
 }
 
+/* Tech name highlights in the intro. Global rather than component-scoped:
+   the bio is split across two columns, and both halves colour the same names. */
+.csharp,
+.dotnet {
+	color: #4d92e3;
+}
+
+.azure {
+	color: #007fff;
+}
+
+.aws {
+	color: #f28e46;
+}
+
+.angular {
+	color: #d64144;
+}
+
+.nodejs {
+	color: #76ae64;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
