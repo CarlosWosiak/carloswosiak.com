@@ -1,9 +1,21 @@
+import ama from "$lib/assets/logo-ama.png";
+import conectcar from "$lib/assets/logo-conectcar.png";
+import itau from "$lib/assets/logo-itau.png";
+import kolina from "$lib/assets/logo-kolina.png";
+
 export const jobs = [
   {
     startDate: "2025",
     endDate: "present",
     jobTitle: "Senior Software Engineer",
     company: "Sunshift / CAA AMA - Alberta Motor Association",
+    website: "https://ama.ab.ca/",
+    logo: {
+      src: ama,
+      width: 246,
+      height: 60,
+      alt: "CAA Alberta Motor Association",
+    },
     description: [
       "Consulting for CAA AMA - Alberta Motor Association.",
       "Working on membership modernization initiatives, developing serverless systems primarily using Node.js Lambdas orchestrated with AWS Step Functions.",
@@ -26,6 +38,13 @@ export const jobs = [
     endDate: "2025",
     jobTitle: "Senior Software Engineer",
     company: "ConectCar",
+    website: "https://conectcar.com/",
+    logo: {
+      src: conectcar,
+      width: 122,
+      height: 40,
+      alt: "ConectCar",
+    },
     description: [
       "Company in the vehicle toll-tag industry. Focus on developing robust, scalable solutions using .NET Core, with a strong emphasis on chatbot integration and advanced cloud infrastructure.",
       "Developed a .NET application to manage email and WhatsApp preferences, updating configurations dynamically in SQL Server.",
@@ -40,6 +59,13 @@ export const jobs = [
     endDate: "2024",
     jobTitle: "Software Engineer",
     company: "Itaú Unibanco",
+    website: "https://www.itau.com.br/",
+    logo: {
+      src: itau,
+      width: 128,
+      height: 128,
+      alt: "Itaú Unibanco",
+    },
     description: [
       "Develop highly scalable AWS Lambda functions using Python and .NET, efficiently processing millions of trading operations daily, resulting in a significant increase in productivity and cost savings for the organization.",
       "Play a key role in the successful migration of the company’s infrastructure to the AWS cloud.",
@@ -56,6 +82,12 @@ export const jobs = [
     endDate: "2021",
     jobTitle: "Software Engineer",
     company: "Kolina Labs",
+    logo: {
+      src: kolina,
+      width: 128,
+      height: 128,
+      alt: "Kolina Labs",
+    },
     description: [
       "Developed dockerized applications in Node.js, Laravel, Vue, Python and Svelte.",
       "Maintained a reliable platform with millions of dollars transacted monthly.",

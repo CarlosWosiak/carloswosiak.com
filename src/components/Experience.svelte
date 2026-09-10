@@ -2,13 +2,45 @@
 	import { reveal } from '$lib/actions/reveal.js';
 	import SectionHeading from './SectionHeading.svelte';
 	import { jobs } from '../data/jobs.js';
+
+	/** @typedef {{ src: string, width: number, height: number, alt: string }} Logo */
 </script>
+
+{#snippet mark(/** @type {Logo} */ logo)}
+	<img
+		src={logo.src}
+		alt="{logo.alt} logo"
+		width={logo.width}
+		height={logo.height}
+		draggable="false"
+		loading="lazy"
+		decoding="async"
+	/>
+{/snippet}
 
 <section class="section-inner" aria-labelledby="experience">
 	<SectionHeading id="experience" number="01." title="Where I’ve Worked" />
 
 	{#each jobs as job (job.jobTitle + job.startDate)}
 		<article class="job-entry" use:reveal>
+			<!-- Linked where the company still has a site worth visiting, and a
+			     plain image where it does not. -->
+			{#if job.logo}
+				<div class="company-logo">
+					{#if job.website}
+						<a
+							href={job.website}
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Visit {job.logo.alt}"
+						>
+							{@render mark(job.logo)}
+						</a>
+					{:else}
+						{@render mark(job.logo)}
+					{/if}
+				</div>
+			{/if}
 			<div class="job-header">
 				<p class="job-period">{job.startDate} - {job.endDate}</p>
 				<h3>
@@ -49,6 +81,40 @@
 
 	.job-entry:hover {
 		background-color: rgba(255, 255, 255, 0.096);
+	}
+
+	/*
+	 * Company logos are sized by height, not width: the set mixes wordmarks
+	 * (CAA AMA, ConectCar) with a square mark (Itaú), and a shared height is
+	 * what makes them read as one row of brands. They are all light-on-
+	 * transparent or brand-coloured, so they sit straight on the page
+	 * background with no plate behind them.
+	 */
+	.company-logo {
+		margin-bottom: 0.9rem;
+	}
+
+	.company-logo a {
+		display: inline-flex;
+	}
+
+	.company-logo img {
+		height: 2.25rem;
+		width: auto;
+		max-width: 11rem;
+		object-fit: contain;
+		opacity: 0.85;
+		transition: opacity 0.3s, transform 0.3s;
+	}
+
+	.job-entry:hover .company-logo img {
+		opacity: 1;
+	}
+
+	.company-logo a:hover img,
+	.company-logo a:focus-visible img {
+		opacity: 1;
+		transform: scale(1.04);
 	}
 
 	.job-header {
